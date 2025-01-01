@@ -5,24 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TurboTurtle Coin</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Reset some default styles */
+        * {
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #1c1c3c, #00bcd4);
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #2C3E50, #4CA1AF);
             color: white;
             text-align: center;
         }
 
         header {
-            background: #1c1c3c;
-            padding: 20px 0;
-            border-bottom: 2px solid #00bcd4;
+            background-color: #34495E;
+            padding: 40px 20px;
+            border-bottom: 2px solid #16A085;
         }
 
         header h1 {
-            font-size: 3rem;
-            margin: 0;
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #16A085;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #BDC3C7;
+            margin-bottom: 20px;
         }
 
         .logo {
@@ -30,66 +43,236 @@
             margin: 10px auto;
         }
 
-        .section {
-            padding: 50px 20px;
-        }
-
-        .section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
         .button {
             display: inline-block;
             padding: 15px 30px;
             margin: 20px 0;
-            background: #00bcd4;
+            background-color: #16A085;
             color: white;
             text-transform: uppercase;
             font-weight: bold;
-            border: none;
-            border-radius: 30px;
-            text-decoration: none;
+            border-radius: 25px;
             cursor: pointer;
+            text-decoration: none;
         }
 
         .button:hover {
-            background: #0199a4;
+            background-color: #1ABC9C;
+        }
+
+        .section {
+            padding: 50px 20px;
+        }
+
+        .roadmap, .transactions {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .roadmap div, .transactions div {
+            background-color: #2C3E50;
+            padding: 20px;
+            width: 250px;
+            margin: 10px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .roadmap div h3, .transactions div h3 {
+            color: #16A085;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
         }
 
         footer {
-            background: #111;
-            padding: 20px 0;
+            background-color: #34495E;
+            padding: 20px;
             margin-top: 50px;
         }
 
         footer p {
-            margin: 0;
-            font-size: 0.9rem;
+            font-size: 1rem;
+            color: #BDC3C7;
         }
+
+        .login-container {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #34495E;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .login-container input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            width: 80%;
+            border: none;
+            background-color: #BDC3C7;
+        }
+
+        .login-container button {
+            padding: 12px 25px;
+            background-color: #16A085;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .login-container button:hover {
+            background-color: #1ABC9C;
+        }
+
+        .transactions ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .transactions ul li {
+            background-color: #34495E;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        .purchase input, .purchase button {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        .purchase input {
+            width: 40%;
+        }
+
+        .purchase button {
+            background-color: #16A085;
+            color: white;
+            font-weight: bold;
+        }
+
+        .purchase button:hover {
+            background-color: #1ABC9C;
+        }
+
     </style>
 </head>
 <body>
+    <!-- Header Section -->
     <header>
         <img src="turboturtle-logo.png" alt="TurboTurtle Logo" class="logo">
         <h1>TurboTurtle Coin</h1>
         <p>The meme coin that’s slow, steady, and turbo-charged!</p>
     </header>
 
+    <!-- What is TurboTurtle Section -->
     <div class="section">
         <h2>What is TurboTurtle?</h2>
-        <p>TurboTurtle is the most epic meme coin in the crypto space, combining the power of patience and turbo speed. Join the race!</p>
+        <p>TurboTurtle is the most epic meme coin in the crypto space. Combining patience and turbo speed, we're ready to race to the top. Join the fun!</p>
         <a href="#buy" class="button">Buy TurboTurtle Now</a>
     </div>
 
+    <!-- Roadmap Section -->
+    <div class="roadmap">
+        <div>
+            <h3>Q1 2025</h3>
+            <p>Launch TurboTurtle Coin. Community building.</p>
+        </div>
+        <div>
+            <h3>Q2 2025</h3>
+            <p>Listing on exchanges. Partnerships.</p>
+        </div>
+        <div>
+            <h3>Q3 2025</h3>
+            <p>More marketing campaigns. Influencers involved.</p>
+        </div>
+        <div>
+            <h3>Q4 2025</h3>
+            <p>TurboTurtle app release with exciting new features!</p>
+        </div>
+    </div>
+
+    <!-- Buy Section -->
     <div class="section" id="buy">
         <h2>How to Buy?</h2>
-        <p>1. Install your favorite wallet.<br>2. Add TurboTurtle using the contract address.<br>3. Swap on Pump.fun and ride the wave!</p>
+        <p>1. Install your favorite wallet (e.g., Metamask).<br>2. Add TurboTurtle using the contract address.<br>3. Swap on Pump.fun to get your coins and ride the wave!</p>
         <a href="https://pump.fun" target="_blank" class="button">Go to Pump.fun</a>
     </div>
 
+    <!-- Login Section -->
+    <div class="login-container">
+        <h2>Connect Your Wallet</h2>
+        <input type="text" placeholder="Enter Wallet Address" id="walletAddress">
+        <button onclick="connectWallet()">Connect Wallet</button>
+    </div>
+
+    <!-- Purchase Section -->
+    <div class="purchase">
+        <input type="number" id="amountToBuy" placeholder="Amount to Buy (ETH)">
+        <button onclick="buyCoins()">Buy TurboTurtle</button>
+    </div>
+
+    <!-- Latest Transactions Section -->
+    <div class="transactions">
+        <h3>Latest Transactions</h3>
+        <ul id="transactionsList">
+            <!-- Latest transactions will be displayed here -->
+        </ul>
+    </div>
+
+    <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 TurboTurtle Coin. All Rights Reserved.</p>
+        <p>&copy; 2025 TurboTurtle Coin. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Mock function to display latest transactions
+        function displayTransactions() {
+            const transactions = [
+                "0xabc123 - 100 TurboTurtle",
+                "0xdef456 - 250 TurboTurtle",
+                "0xghi789 - 50 TurboTurtle",
+                // Additional mock transaction data here
+            ];
+
+            const transactionsList = document.getElementById("transactionsList");
+            transactionsList.innerHTML = '';
+            transactions.slice(0, 10).forEach(tx => {
+                const li = document.createElement("li");
+                li.textContent = tx;
+                transactionsList.appendChild(li);
+            });
+        }
+
+        function connectWallet() {
+            const walletAddress = document.getElementById("walletAddress").value;
+            if (walletAddress) {
+                alert(`Wallet connected: ${walletAddress}`);
+            } else {
+                alert("Please enter a valid wallet address.");
+            }
+        }
+
+        function buyCoins() {
+            const amount = document.getElementById("amountToBuy").value;
+            if (amount && amount > 0) {
+                alert(`Buying ${amount} TurboTurtle Coins...`);
+                // Integrate with the Pump.fun API or another buying platform here
+            } else {
+                alert("Please enter a valid amount.");
+            }
+        }
+
+        // Call to display transactions on page load
+        displayTransactions();
+    </script>
 </body>
 </html>
