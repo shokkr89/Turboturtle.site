@@ -24,7 +24,7 @@
             height: 80px;
         }
         nav a {
-            color: #111;
+            color: #fff; /* Endret tekstfarge for synlighet */
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
@@ -83,36 +83,6 @@
         .roadmap-item p {
             margin: 0;
         }
-        .whitepaper-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
-        .whitepaper-content {
-            background: #222;
-            padding: 20px;
-            max-width: 800px;
-            width: 80%;
-            text-align: left;
-            border-radius: 10px;
-        }
-        .close-modal {
-            display: inline-block;
-            background: #ff4d4d;
-            padding: 10px 20px;
-            color: white;
-            cursor: pointer;
-            margin-top: 20px;
-            border-radius: 5px;
-            text-align: center;
-        }
         #contract {
             background: #222;
             padding: 50px 20px;
@@ -133,6 +103,27 @@
         .copy-button:hover {
             background: #0199a4;
         }
+        .whitepaper {
+            background: #222;
+            padding: 50px 20px;
+            margin-top: 50px;
+            text-align: left;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+        .whitepaper h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .whitepaper p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        .whitepaper h3 {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -141,8 +132,8 @@
         <nav>
             <a href="#about">About</a>
             <a href="#roadmap">Roadmap</a>
-            <a href="#whitepaper" onclick="openWhitepaper()">Whitepaper</a>
             <a href="#contract">Contract</a>
+            <a href="#whitepaper">Whitepaper</a> <!-- Whitepaper er nå en lenke som går til seksjonen nederst -->
         </nav>
     </header>
 
@@ -184,43 +175,39 @@
         -->
     </div>
 
+    <div class="whitepaper" id="whitepaper">
+        <h2>TurboTurtle Whitepaper</h2>
+        <p>
+            Welcome to the TurboTurtle Whitepaper. This document outlines the vision, objectives, and technical specifications behind TurboTurtle Coin, a decentralized, community-driven cryptocurrency built on the Solana blockchain. TurboTurtle aims to leverage the power of memes, humor, and decentralization to create a fun, interactive, and rewarding ecosystem for crypto enthusiasts and meme lovers alike.
+        </p>
+        <h3>Mission</h3>
+        <p>
+            The mission of TurboTurtle Coin is to foster a fun and supportive community while providing value through the use of blockchain technology. With the goal of bringing more people into the world of cryptocurrency, TurboTurtle Coin offers an entry point for those who are new to crypto, all while ensuring that its ecosystem remains engaging and transparent.
+        </p>
+        <h3>Tokenomics</h3>
+        <p>
+            TurboTurtle Coin is built with a fixed supply, ensuring scarcity and value retention. The total supply will be distributed across several key areas, including community incentives, exchange listings, liquidity pools, and charitable donations. The goal is to create a balanced token economy that benefits all participants in the TurboTurtle ecosystem.
+        </p>
+        <h3>Technology</h3>
+        <p>
+            TurboTurtle Coin is built on the Solana blockchain, which provides high-speed transactions and low fees, ensuring that users have a seamless experience when trading or interacting with the ecosystem. This choice of blockchain aligns with TurboTurtle's commitment to scalability and efficiency.
+        </p>
+        <h3>Future Developments</h3>
+        <p>
+            As TurboTurtle grows, the project will explore opportunities for further integration with decentralized finance (DeFi) applications, non-fungible tokens (NFTs), and decentralized applications (DApps). Our roadmap is designed to ensure long-term sustainability and growth, bringing value to our community and the broader crypto space.
+        </p>
+    </div>
+
     <footer>
         <p>&copy; 2025 TurboTurtle Coin. All rights reserved.</p>
     </footer>
 
-    <div class="whitepaper-modal" id="whitepaper-modal">
-        <div class="whitepaper-content">
-            <h2>TurboTurtle Whitepaper</h2>
-            <p>
-                Welcome to the TurboTurtle Whitepaper. This document outlines the vision, objectives, and technical specifications behind TurboTurtle Coin, a decentralized, community-driven cryptocurrency built on the Solana blockchain. TurboTurtle aims to leverage the power of memes, humor, and decentralization to create a fun, interactive, and rewarding ecosystem for crypto enthusiasts and meme lovers alike.
-            </p>
-            <h3>Mission</h3>
-            <p>
-                The mission of TurboTurtle Coin is to foster a fun and supportive community while providing value through the use of blockchain technology. With the goal of bringing more people into the world of cryptocurrency, TurboTurtle Coin offers an entry point for those who are new to crypto, all while ensuring that its ecosystem remains engaging and transparent.
-            </p>
-            <h3>Tokenomics</h3>
-            <p>
-                TurboTurtle Coin is built with a fixed supply, ensuring scarcity and value retention. The total supply will be distributed across several key areas, including community incentives, exchange listings, liquidity pools, and charitable donations. The goal is to create a balanced token economy that benefits all participants in the TurboTurtle ecosystem.
-            </p>
-            <h3>Technology</h3>
-            <p>
-                TurboTurtle Coin is built on the Solana blockchain, which provides high-speed transactions and low fees, ensuring that users have a seamless experience when trading or interacting with the ecosystem. This choice of blockchain aligns with TurboTurtle's commitment to scalability and efficiency.
-            </p>
-            <h3>Future Developments</h3>
-            <p>
-                As TurboTurtle grows, the project will explore opportunities for further integration with decentralized finance (DeFi) applications, non-fungible tokens (NFTs), and decentralized applications (DApps). Our roadmap is designed to ensure long-term sustainability and growth, bringing value to our community and the broader crypto space.
-            </p>
-            <button class="close-modal" onclick="closeWhitepaper()">Close</button>
-        </div>
-    </div>
-
     <script>
-        function openWhitepaper() {
-            document.getElementById('whitepaper-modal').style.display = 'flex';
-        }
-
-        function closeWhitepaper() {
-            document.getElementById('whitepaper-modal').style.display = 'none';
+        function copyToClipboard() {
+            var contractAddress = document.getElementById('contract-address');
+            navigator.clipboard.writeText(contractAddress.innerText).then(function() {
+                alert('Contract address copied to clipboard');
+            });
         }
     </script>
 </body>
