@@ -19,18 +19,30 @@
             justify-content: space-between;
             padding: 20px;
             background: rgba(39, 40, 42, 255);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
         }
         header img {
             height: 80px;
         }
+        nav {
+            display: flex;
+            gap: 20px;
+        }
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
             font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: rgba(0, 188, 212, 0.8);
+            transition: background 0.3s, transform 0.3s;
         }
         nav a:hover {
-            text-decoration: underline;
+            background: #0199a4;
+            transform: scale(1.1);
+        }
+        nav a.active {
+            background: #0199a4;
         }
         .section {
             padding: 50px 20px;
@@ -51,9 +63,11 @@
             border-radius: 30px;
             text-decoration: none;
             cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
         }
         .button:hover {
             background: #0199a4;
+            transform: scale(1.05);
         }
         footer {
             background: #111;
@@ -83,36 +97,6 @@
         .roadmap-item p {
             margin: 0;
         }
-        .whitepaper-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
-        .whitepaper-content {
-            background: #222;
-            padding: 20px;
-            max-width: 800px;
-            width: 80%;
-            text-align: left;
-            border-radius: 10px;
-        }
-        .close-modal {
-            display: inline-block;
-            background: #ff4d4d;
-            padding: 10px 20px;
-            color: white;
-            cursor: pointer;
-            margin-top: 20px;
-            border-radius: 5px;
-            text-align: center;
-        }
         #contract {
             background: #222;
             padding: 50px 20px;
@@ -129,14 +113,27 @@
             border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
+            transition: background 0.3s, transform 0.3s;
         }
         .copy-button:hover {
             background: #0199a4;
+            transform: scale(1.05);
         }
         #contract-address {
             margin-top: 20px;
             font-size: 1rem;
             font-family: monospace;
+        }
+        .whitepaper-text {
+            background: #222;
+            color: white;
+            padding: 50px;
+            border-radius: 10px;
+            width: 80%;
+            margin: 20px auto;
+            text-align: left;
+            font-size: 1.1rem;
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -146,7 +143,6 @@
         <nav>
             <a href="#about">About</a>
             <a href="#roadmap">Roadmap</a>
-            <a href="#whitepaper" onclick="openWhitepaper()">Whitepaper</a>
             <a href="#contract">Contract</a>
         </nav>
     </header>
@@ -192,23 +188,30 @@
         <p>&copy; 2025 TurboTurtle Coin. All rights reserved.</p>
     </footer>
 
-    <div class="whitepaper-modal" id="whitepaper-modal">
-        <div class="whitepaper-content">
-            <h2>TurboTurtle Whitepaper</h2>
-            <p>Welcome to the TurboTurtle Whitepaper! Here you will find everything you need to know about TurboTurtle Coin, its use case, the community, the ecosystem, and much more!</p>
-            <button class="close-modal" onclick="closeWhitepaper()">Close</button>
-        </div>
+    <!-- Whitepaper Section -->
+    <div class="whitepaper-text">
+        <h2>TurboTurtle Coin Whitepaper</h2>
+        <p>TurboTurtle Coin is not just another cryptocurrency—it’s a movement. A revolution in the meme coin space that blends humor, community, and decentralization, all on a fast and scalable blockchain like Solana. TurboTurtle Coin is designed to empower people by offering a fun and engaging way to participate in the crypto ecosystem, while also embracing a strong commitment to long-term value creation.</p>
+        
+        <p>Our mission is to create a coin that embodies the spirit of community and meme culture, with the aim of becoming one of the most recognizable and beloved cryptocurrencies in the world. TurboTurtle Coin combines the power of memes, the potential of blockchain technology, and the growing interest in decentralized finance to provide users with a unique investment opportunity. Whether you’re a seasoned crypto investor or someone looking for a fun way to participate in the world of digital assets, TurboTurtle Coin welcomes all enthusiasts.</p>
+        
+        <p><strong>Key Features of TurboTurtle Coin:</strong></p>
+        <ul>
+            <li><strong>Community-driven:</strong> TurboTurtle Coin is built by the community, for the community. Every decision, feature, and partnership is made with the interests of our users in mind.</li>
+            <li><strong>Meme Culture:</strong> We embrace the fun and humor of the meme world. TurboTurtle Coin is about bringing joy and laughter while riding the wave of cryptocurrency growth.</li>
+            <li><strong>Decentralization:</strong> TurboTurtle Coin runs on the Solana blockchain, offering fast transactions and a scalable ecosystem for users worldwide.</li>
+            <li><strong>Tokenomics:</strong> Our tokenomics model ensures that TurboTurtle Coin is sustainable and has the potential for long-term growth and value appreciation.</li>
+            <li><strong>Future Development:</strong> As part of our roadmap, we plan to launch an NFT collection, list on exchanges, and develop decentralized applications (DApps) that will further empower the TurboTurtle community.</li>
+        </ul>
+        
+        <p>The TurboTurtle ecosystem is designed to provide value to its community members. By holding and using TurboTurtle Coin, users will gain access to exclusive features, rewards, and future updates. Whether it’s participating in NFT drops, using our decentralized applications, or just being part of the TurboTurtle movement, there are countless ways to engage with the coin.</p>
+        
+        <p><strong>Vision for the Future:</strong> Our vision is to make TurboTurtle Coin a household name in the cryptocurrency space. We aim to partner with various projects and organizations to expand the reach of TurboTurtle Coin and increase its value within the broader crypto community. TurboTurtle Coin will continue to evolve, ensuring it remains fun, engaging, and valuable for all users.</p>
+        
+        <p>In conclusion, TurboTurtle Coin is more than just a coin. It’s a movement fueled by community, humor, and the power of decentralization. Whether you’re here for the fun, the memes, or the potential for growth, TurboTurtle Coin invites you to join the journey and be part of something extraordinary.</p>
     </div>
 
     <script>
-        function openWhitepaper() {
-            document.getElementById("whitepaper-modal").style.display = "flex";
-        }
-
-        function closeWhitepaper() {
-            document.getElementById("whitepaper-modal").style.display = "none";
-        }
-
         function copyContractAddress() {
             const contractAddress = document.getElementById("contract-address").textContent;
             navigator.clipboard.writeText(contractAddress).then(function() {
