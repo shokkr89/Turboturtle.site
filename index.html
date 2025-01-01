@@ -127,13 +127,47 @@
             border-radius: 5px;
             margin-bottom: 10px;
         }
+
+        /* Whitepaper Modal */
+        .whitepaper-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .whitepaper-content {
+            background: #222;
+            padding: 20px;
+            max-width: 800px;
+            width: 80%;
+            text-align: left;
+            border-radius: 10px;
+        }
+
+        .close-modal {
+            display: inline-block;
+            background: #ff4d4d;
+            padding: 10px 20px;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <!-- Header with Text -->
     <header>
         <img src="https://m.media-amazon.com/images/I/61nXd+Z6ktL._AC_UF1000,1000_QL80_.jpg" alt="TurboTurtle Coin">
-        <div class="header-text">Join the TurboTurtle revolution! Fast, fun, and fearless.</div>
+        <div class="header-text">Slow and steady wins the race, but TurboTurtle wins it faster!</div>
     </header>
 
     <!-- Main Content Section -->
@@ -150,7 +184,7 @@
     </div>
 
     <div class="section">
-        <a href="#whitepaper" class="button">View Whitepaper</a>
+        <a href="#whitepaper" class="button" onclick="openWhitepaper()">View Whitepaper</a>
     </div>
 
     <!-- NFT Section -->
@@ -176,6 +210,17 @@
     <div class="latest-purchases">
         <h2>Latest 10 Purchases</h2>
         <div id="latest-purchases-list"></div>
+    </div>
+
+    <!-- Whitepaper Modal -->
+    <div class="whitepaper-modal" id="whitepaper-modal">
+        <div class="whitepaper-content">
+            <h2>TurboTurtle Whitepaper</h2>
+            <p>Welcome to the TurboTurtle Whitepaper! Here you will find everything you need to know about TurboTurtle Coin, its use case, the community, the ecosystem, and our future goals.</p>
+            <p><strong>Tokenomics:</strong> 50% for the community, 30% for development, and 20% for marketing. The goal is to build a strong decentralized network and community of supporters.</p>
+            <p><strong>Roadmap:</strong> Q1 - Community growth, Q2 - Listing on exchanges, Q3 - NFT collection launch, Q4 - DApp development.</p>
+            <button class="close-modal" onclick="closeWhitepaper()">Close</button>
+        </div>
     </div>
 
     <footer>
@@ -206,6 +251,14 @@
 
         function buyNFT(id) {
             alert(`You selected to buy ${nfts.find(nft => nft.id === id).name}`);
+        }
+
+        function openWhitepaper() {
+            document.getElementById('whitepaper-modal').style.display = 'flex';
+        }
+
+        function closeWhitepaper() {
+            document.getElementById('whitepaper-modal').style.display = 'none';
         }
 
         loadNFTs();
