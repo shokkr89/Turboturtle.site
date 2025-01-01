@@ -15,14 +15,22 @@
         }
 
         header {
-            background: #1c1c3c;
-            padding: 20px 0;
+            background: url('https://m.media-amazon.com/images/I/61nXd+Z6ktL._AC_UF1000,1000_QL80_.jpg') no-repeat center center/cover;
+            padding: 100px 0;
             border-bottom: 2px solid #00bcd4;
+            color: white;
         }
 
         header h1 {
             font-size: 3rem;
             margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
         }
 
         .section {
@@ -108,6 +116,8 @@
             background: #444;
             border-radius: 10px;
             margin: 10px 0;
+            max-height: 300px;
+            overflow-y: scroll;
         }
 
         .chat-message {
@@ -144,13 +154,13 @@
 
     <div class="section">
         <h2>What is TurboTurtle?</h2>
-        <p>TurboTurtle is a community-driven meme coin that blends fun, humor, and the power of decentralization. It’s built on the Ethereum blockchain and designed to bring together crypto enthusiasts and meme lovers in a new way. Join the TurboTurtle revolution and experience the next generation of meme coins!</p>
+        <p>TurboTurtle is a community-driven meme coin that blends fun, humor, and the power of decentralization. It’s built on the Solana blockchain and designed to bring together crypto enthusiasts and meme lovers in a new way. Join the TurboTurtle revolution and experience the next generation of meme coins!</p>
         <a href="#buy" class="button">Buy TurboTurtle Now</a>
     </div>
 
     <div class="section" id="buy">
         <h2>How to Buy?</h2>
-        <p>1. Install your favorite wallet (MetaMask, Trust Wallet, etc.).<br>2. Add TurboTurtle using the contract address.<br>3. Swap on Pump.fun and join the fun!</p>
+        <p>1. Install your favorite Solana wallet (e.g., Phantom, Sollet, or Solflare).<br>2. Add TurboTurtle using the Solana token address.<br>3. Swap on Pump.fun and join the fun!</p>
         <a href="https://pump.fun" target="_blank" class="button">Go to Pump.fun</a>
     </div>
 
@@ -169,23 +179,73 @@
 
     <div class="community-section">
         <h2>Community Chat</h2>
-        <div class="community-chat">
-            <div class="chat-message"><strong>User1:</strong> Who's ready for the next big meme coin? 🚀</div>
-            <div class="chat-message"><strong>User2:</strong> TurboTurtle is going to be huge! 🐢💥</div>
-            <div class="chat-message"><strong>User3:</strong> I just bought some! Can't wait to see it grow! 🌱</div>
+        <!-- Check if user is connected to wallet -->
+        <div id="chat-section" class="community-chat">
+            <div id="chat-messages">
+                <!-- Chat messages will be displayed here -->
+            </div>
+            <input type="text" id="chat-input" placeholder="Send a message..." disabled>
+            <button id="send-chat" disabled>Send</button>
         </div>
     </div>
 
     <div class="latest-purchases">
         <h2>Latest 10 Purchases</h2>
-        <div class="purchase-item">0x1234...abc purchased 500 TurboTurtle</div>
-        <div class="purchase-item">0x5678...def purchased 1000 TurboTurtle</div>
-        <div class="purchase-item">0x9abc...ghi purchased 200 TurboTurtle</div>
-        <!-- Repeat for 10 items -->
+        <div id="latest-purchases-list">
+            <!-- Latest purchases will be dynamically filled -->
+        </div>
     </div>
 
     <footer>
         <p>&copy; 2025 TurboTurtle Coin. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Placeholder functions for wallet connection and chat
+        let userWalletConnected = false;
+
+        // Simulate a wallet connection check
+        function checkWalletConnection() {
+            if (userWalletConnected) {
+                document.getElementById("chat-input").disabled = false;
+                document.getElementById("send-chat").disabled = false;
+            }
+        }
+
+        // Handle chat sending
+        document.getElementById("send-chat").onclick = function() {
+            const message = document.getElementById("chat-input").value;
+            if (message) {
+                const messageElement = document.createElement("div");
+                messageElement.classList.add("chat-message");
+                messageElement.textContent = "User: " + message;
+                document.getElementById("chat-messages").appendChild(messageElement);
+                document.getElementById("chat-input").value = "";
+            }
+        }
+
+        // Simulate getting the last 10 purchases from Pump.fun (replace with actual API call)
+        function getLatestPurchases() {
+            const purchases = [
+                "0x1234...abc purchased 500 TurboTurtle",
+                "0x5678...def purchased 1000 TurboTurtle",
+                "0x9abc...ghi purchased 200 TurboTurtle",
+                "0x3456...jkl purchased 150 TurboTurtle",
+                "0x7890...mno purchased 800 TurboTurtle"
+            ];
+
+            const purchasesList = document.getElementById("latest-purchases-list");
+            purchases.forEach(purchase => {
+                const purchaseItem = document.createElement("div");
+                purchaseItem.classList.add("purchase-item");
+                purchaseItem.textContent = purchase;
+                purchasesList.appendChild(purchaseItem);
+            });
+        }
+
+        // Initialize
+        checkWalletConnection();
+        getLatestPurchases();
+    </script>
 </body>
 </html>
