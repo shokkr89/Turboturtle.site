@@ -20,6 +20,7 @@
             padding: 20px;
             background: rgba(39, 40, 42, 255);
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            flex-wrap: wrap;
         }
         header img {
             height: 80px;
@@ -27,6 +28,9 @@
         nav {
             display: flex;
             gap: 20px;
+            justify-content: center;
+            width: 100%;
+            margin-top: 10px;
         }
         nav a {
             color: white;
@@ -135,6 +139,40 @@
             font-size: 1.1rem;
             line-height: 1.6;
         }
+
+        /* Responsivitet for mobil */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            header img {
+                margin-bottom: 20px;
+            }
+            nav {
+                flex-direction: column;
+                width: 100%;
+                gap: 10px;
+            }
+            nav a {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            .section {
+                padding: 30px 15px;
+            }
+            .roadmap {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .roadmap-item {
+                width: 90%;
+            }
+            .whitepaper-text {
+                width: 90%;
+                padding: 30px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -198,28 +236,4 @@
         <p><strong>Key Features of TurboTurtle Coin:</strong></p>
         <ul>
             <li><strong>Community-driven:</strong> TurboTurtle Coin is built by the community, for the community. Every decision, feature, and partnership is made with the interests of our users in mind.</li>
-            <li><strong>Meme Culture:</strong> We embrace the fun and humor of the meme world. TurboTurtle Coin is about bringing joy and laughter while riding the wave of cryptocurrency growth.</li>
-            <li><strong>Decentralization:</strong> TurboTurtle Coin runs on the Solana blockchain, offering fast transactions and a scalable ecosystem for users worldwide.</li>
-            <li><strong>Tokenomics:</strong> Our tokenomics model ensures that TurboTurtle Coin is sustainable and has the potential for long-term growth and value appreciation.</li>
-            <li><strong>Future Development:</strong> As part of our roadmap, we plan to launch an NFT collection, list on exchanges, and develop decentralized applications (DApps) that will further empower the TurboTurtle community.</li>
-        </ul>
-        
-        <p>The TurboTurtle ecosystem is designed to provide value to its community members. By holding and using TurboTurtle Coin, users will gain access to exclusive features, rewards, and future updates. Whether it’s participating in NFT drops, using our decentralized applications, or just being part of the TurboTurtle movement, there are countless ways to engage with the coin.</p>
-        
-        <p><strong>Vision for the Future:</strong> Our vision is to make TurboTurtle Coin a household name in the cryptocurrency space. We aim to partner with various projects and organizations to expand the reach of TurboTurtle Coin and increase its value within the broader crypto community. TurboTurtle Coin will continue to evolve, ensuring it remains fun, engaging, and valuable for all users.</p>
-        
-        <p>In conclusion, TurboTurtle Coin is more than just a coin. It’s a movement fueled by community, humor, and the power of decentralization. Whether you’re here for the fun, the memes, or the potential for growth, TurboTurtle Coin invites you to join the journey and be part of something extraordinary.</p>
-    </div>
-
-    <script>
-        function copyContractAddress() {
-            const contractAddress = document.getElementById("contract-address").textContent;
-            navigator.clipboard.writeText(contractAddress).then(function() {
-                alert("Contract address copied to clipboard!");
-            }).catch(function(error) {
-                alert("Failed to copy contract address: " + error);
-            });
-        }
-    </script>
-</body>
-</html>
+            <li><strong>Meme Culture:</strong> We embrace the fun and humor of the meme world. Turbo
