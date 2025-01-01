@@ -14,7 +14,6 @@
             text-align: center;
         }
 
-        /* Hvit tekst til venstre på skrå i header */
         header {
             display: flex;
             align-items: center;
@@ -59,10 +58,6 @@
             transform: scale(1.1);
         }
 
-        nav a.active {
-            background: #0199a4;
-        }
-
         .section {
             padding: 50px 20px;
         }
@@ -72,24 +67,57 @@
             margin-bottom: 20px;
         }
 
+        .nft-section {
+            padding: 50px 20px;
+            background: #111;
+        }
+
+        .nft-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .nft-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .nft-card {
+            background: #222;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .nft-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .nft-card h3 {
+            margin: 10px 0;
+        }
+
+        .nft-card p {
+            margin: 10px 0;
+        }
+
         .button {
             display: inline-block;
-            padding: 15px 30px;
-            margin: 20px 0;
+            padding: 10px 20px;
             background: #00bcd4;
             color: white;
-            text-transform: uppercase;
-            font-weight: bold;
             border: none;
-            border-radius: 30px;
+            border-radius: 5px;
             text-decoration: none;
             cursor: pointer;
-            transition: background 0.3s, transform 0.3s;
+            transition: background 0.3s;
         }
 
         .button:hover {
             background: #0199a4;
-            transform: scale(1.05);
         }
 
         footer {
@@ -102,113 +130,6 @@
             margin: 0;
             font-size: 0.9rem;
         }
-
-        .roadmap {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .roadmap-item {
-            background-color: #222;
-            border-radius: 10px;
-            padding: 20px;
-            width: 250px;
-            text-align: center;
-        }
-
-        .roadmap-item h3 {
-            margin-bottom: 10px;
-        }
-
-        .roadmap-item p {
-            margin: 0;
-        }
-
-        #contract {
-            background: #222;
-            padding: 50px 20px;
-            border-radius: 10px;
-            margin: 20px auto;
-            max-width: 800px;
-        }
-
-        .copy-button {
-            background: #00bcd4;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin-top: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background 0.3s, transform 0.3s;
-        }
-
-        .copy-button:hover {
-            background: #0199a4;
-            transform: scale(1.05);
-        }
-
-        #contract-address {
-            margin-top: 20px;
-            font-size: 1rem;
-            font-family: monospace;
-        }
-
-        .whitepaper-text {
-            background: #222;
-            color: white;
-            padding: 50px;
-            border-radius: 10px;
-            width: 80%;
-            margin: 20px auto;
-            text-align: left;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        /* Responsivitet for mobil */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            header img {
-                margin-bottom: 20px;
-            }
-
-            nav {
-                flex-direction: column;
-                width: 100%;
-                gap: 10px;
-            }
-
-            nav a {
-                padding: 12px 25px;
-                font-size: 1rem;
-            }
-
-            .section {
-                padding: 30px 15px;
-            }
-
-            .roadmap {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .roadmap-item {
-                width: 90%;
-            }
-
-            .whitepaper-text {
-                width: 90%;
-                padding: 30px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -220,6 +141,7 @@
         <a href="#about">About</a>
         <a href="#roadmap">Roadmap</a>
         <a href="#contract">Contract</a>
+        <a href="#nft">NFTs</a> <!-- Lenke til NFT-seksjonen -->
     </nav>
 </header>
 
@@ -227,67 +149,56 @@
 <div class="section" id="about">
     <h2>About TurboTurtle Coin</h2>
     <p>TurboTurtle Coin is a community-driven meme coin that combines fun, humor, and the power of decentralization. Built on the Solana blockchain, it aims to bring together crypto enthusiasts and meme lovers in a unique way.</p>
-    <p><strong>TurboTurtle – The Only Coin That Can Take It Easy and Still Win!</strong></p>
-    <p>You don’t need to be fast to be smart. TurboTurtle Coin is for those who love having fun on the way to the top, even if the road is a little... slow. We’re cruising through the biggest challenges – slow, steady, and with style. Why rush when you have TurboTurtle?</p>
     <a href="https://pump.fun" target="_blank" class="button">Buy TurboTurtle on Pump.fun</a>
 </div>
 
 <!-- Roadmap Section -->
 <div class="section" id="roadmap">
     <h2>Roadmap</h2>
-    <div class="roadmap">
-        <div class="roadmap-item">
-            <h3>Q1 2025</h3>
-            <p>Community Growth</p>
+    <p>Our journey to success!</p>
+</div>
+
+<!-- Coin contract Section -->
+<div class="section" id="contract">
+    <h2>TurboTurtle Coin Contract</h2>
+    <p>The official TurboTurtle Coin contract address is:</p>
+    <p><code>0xYourContractAddressHere1234567890</code></p>
+    <button class="button" onclick="copyContractAddress()">Copy Contract Address</button>
+</div>
+
+<!-- NFT Section -->
+<div class="nft-section" id="nft">
+    <h2>Our NFT Collection</h2>
+    <p>Discover unique NFTs from the TurboTurtle collection!</p>
+    <div class="nft-grid">
+        <div class="nft-card">
+            <img src="https://via.placeholder.com/300" alt="NFT Example">
+            <h3>TurboTurtle #1</h3>
+            <p>Price: 0.5 SOL</p>
+            <a href="#" class="button">Buy Now</a>
         </div>
-        <div class="roadmap-item">
-            <h3>Q2 2025</h3>
-            <p>Exchange Listings</p>
+        <div class="nft-card">
+            <img src="https://via.placeholder.com/300" alt="NFT Example">
+            <h3>TurboTurtle #2</h3>
+            <p>Price: 0.7 SOL</p>
+            <a href="#" class="button">Buy Now</a>
         </div>
-        <div class="roadmap-item">
-            <h3>Q3 2025</h3>
-            <p>NFT Collection Launch</p>
-        </div>
-        <div class="roadmap-item">
-            <h3>Q4 2025</h3>
-            <p>DApp Development</p>
-        </div>
+        <!-- Flere NFTs kan legges til her -->
     </div>
 </div>
 
-<!-- Coin contract Section Above the Whitepaper -->
-<div class="section" id="contract">
-    <h2>TurboTurtle Coin Contract</h2>
-    <p>The official TurboTurtle Coin contract address is listed below. Feel free to copy it!</p>
-    <p id="contract-address">5oo31JDsrFYgWcyfPR6mDwdt4kDdDtXR4cN9Yt2Hpump</p>
-    <button class="copy-button" onclick="copyContractAddress()">Copy Contract Address</button>
-</div>
-
-<script>
-    function copyContractAddress() {
-        const contractAddress = "5oo31JDsrFYgWcyfPR6mDwdt4kDdDtXR4cN9Yt2Hpump";
-        navigator.clipboard.writeText(contractAddress).then(() => {
-            alert("Contract address copied to clipboard!");
-        }).catch(err => {
-            alert("Failed to copy contract address: " + err);
-        });
-    }
-</script>
-
-<!-- Whitepaper Section -->
-<div class="whitepaper-text">
-    <h2>TurboTurtle Coin Whitepaper</h2>
-    <p>TurboTurtle Coin is not just another cryptocurrency—it’s a movement. Our coin is built on the belief that the journey is just as important as the destination. As part of the meme coin revolution, TurboTurtle brings the fun back to cryptocurrency. Despite being slow and steady, TurboTurtle Coin is all about building a sustainable and community-driven ecosystem that thrives over time.</p>
-    <p>TurboTurtle Coin uses the Solana blockchain for fast and secure transactions. The tokenomics are designed to benefit the community while maintaining transparency and fairness for all participants. With our slow but steady approach, we aim to build something lasting.</p>
-    <p>Our roadmap includes major milestones like exchange listings, partnerships, and the
-
-utvikling av spennende, fellesskapsdrevne prosjekter som NFT-kolleksjoner og desentraliserte applikasjoner (dApps). Bli med på TurboTurtle-bevegelsen i dag og opplev en ny type kryptovaluta.</p>
-</div>
-
-<!-- Footer Section -->
 <footer>
     <p>&copy; 2025 TurboTurtle Coin. All rights reserved.</p>
 </footer>
+
+<script>
+    function copyContractAddress() {
+        const contractAddress = "0xYourContractAddressHere1234567890";
+        navigator.clipboard.writeText(contractAddress).then(() => {
+            alert("Contract address copied!");
+        });
+    }
+</script>
 
 </body>
 </html>
