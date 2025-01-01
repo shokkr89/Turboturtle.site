@@ -13,6 +13,8 @@
             color: white;
             text-align: center;
         }
+
+        /* Hvit tekst til venstre på skrå i header */
         header {
             display: flex;
             align-items: center;
@@ -22,9 +24,18 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
             flex-wrap: wrap;
         }
+
+        header h1 {
+            font-size: 3rem;
+            color: white;
+            transform: rotate(-15deg);
+            margin-left: 20px;
+        }
+
         header img {
             height: 80px;
         }
+
         nav {
             display: flex;
             gap: 20px;
@@ -32,6 +43,7 @@
             width: 100%;
             margin-top: 10px;
         }
+
         nav a {
             color: white;
             text-decoration: none;
@@ -41,20 +53,25 @@
             background: rgba(0, 188, 212, 0.8);
             transition: background 0.3s, transform 0.3s;
         }
+
         nav a:hover {
             background: #0199a4;
             transform: scale(1.1);
         }
+
         nav a.active {
             background: #0199a4;
         }
+
         .section {
             padding: 50px 20px;
         }
+
         .section h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
         }
+
         .button {
             display: inline-block;
             padding: 15px 30px;
@@ -69,25 +86,30 @@
             cursor: pointer;
             transition: background 0.3s, transform 0.3s;
         }
+
         .button:hover {
             background: #0199a4;
             transform: scale(1.05);
         }
+
         footer {
             background: #111;
             padding: 20px 0;
             margin-top: 50px;
         }
+
         footer p {
             margin: 0;
             font-size: 0.9rem;
         }
+
         .roadmap {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
         }
+
         .roadmap-item {
             background-color: #222;
             border-radius: 10px;
@@ -95,12 +117,15 @@
             width: 250px;
             text-align: center;
         }
+
         .roadmap-item h3 {
             margin-bottom: 10px;
         }
+
         .roadmap-item p {
             margin: 0;
         }
+
         #contract {
             background: #222;
             padding: 50px 20px;
@@ -108,6 +133,7 @@
             margin: 20px auto;
             max-width: 800px;
         }
+
         .copy-button {
             background: #00bcd4;
             color: white;
@@ -119,15 +145,18 @@
             font-weight: bold;
             transition: background 0.3s, transform 0.3s;
         }
+
         .copy-button:hover {
             background: #0199a4;
             transform: scale(1.05);
         }
+
         #contract-address {
             margin-top: 20px;
             font-size: 1rem;
             font-family: monospace;
         }
+
         .whitepaper-text {
             background: #222;
             color: white;
@@ -146,28 +175,35 @@
                 flex-direction: column;
                 text-align: center;
             }
+
             header img {
                 margin-bottom: 20px;
             }
+
             nav {
                 flex-direction: column;
                 width: 100%;
                 gap: 10px;
             }
+
             nav a {
                 padding: 12px 25px;
                 font-size: 1rem;
             }
+
             .section {
                 padding: 30px 15px;
             }
+
             .roadmap {
                 flex-direction: column;
                 gap: 15px;
             }
+
             .roadmap-item {
                 width: 90%;
             }
+
             .whitepaper-text {
                 width: 90%;
                 padding: 30px;
@@ -181,86 +217,82 @@
             margin: 20px 0;
             flex-wrap: wrap;
         }
+
         .image-container img {
             width: 300px;
             height: auto;
             border-radius: 15px;
             margin: 10px;
         }
+
         .image1 {
             border: 10px solid rgba(10, 10, 10, 255);
         }
+
         .image2 {
             border: 10px solid black;
         }
+
         .image3 {
             border: 10px solid black;
         }
-
     </style>
 </head>
 <body>
-    <header>
-        <img src="https://m.media-amazon.com/images/I/61nXd+Z6ktL._AC_UF1000,1000_QL80_.jpg" alt="TurboTurtle Logo">
-        <nav>
-            <a href="#about">About</a>
-            <a href="#roadmap">Roadmap</a>
-            <a href="#contract">Contract</a>
-        </nav>
-    </header>
 
-    <div class="image-container">
-        <img class="image1" src="https://m.media-amazon.com/images/I/61T3JJxgzPL._AC_UF1000,1000_QL80_.jpg" alt="Background Image 1">
-        <img class="image2" src="https://ih1.redbubble.net/image.1534210393.6870/flat,750x,075,f-pad,750x1000,f8f8f8.jpg" alt="TurboTurtle">
-        <img class="image3" src="https://ih1.redbubble.net/image.902247496.3455/fposter,small,wall_texture,product,750x1000.jpg" alt="Background Image 3">
-    </div>
+<header>
+    <h1>TurboTurtle</h1>
+    <img src="https://m.media-amazon.com/images/I/61nXd+Z6ktL._AC_UF1000,1000_QL80_.jpg" alt="TurboTurtle Logo">
+    <nav>
+        <a href="#about">About</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#contract">Contract</a>
+    </nav>
+</header>
 
-    <div class="section" id="contract">
-        <h2>TurboTurtle Coin Contract</h2>
-        <p>The official TurboTurtle Coin contract address is listed below. Feel free to copy it!</p>
-        <p id="contract-address">0xYourContractAddressHere1234567890</p>
-        <button class="copy-button" onclick="copyContractAddress()">Copy Contract Address</button>
-    </div>
+<!-- Coin contract Section Above the Images -->
+<div class="section" id="contract">
+    <h2>TurboTurtle Coin Contract</h2>
+    <p>The official TurboTurtle Coin contract address is listed below. Feel free to copy it!</p>
+    <p id="contract-address">0xYourContractAddressHere1234567890</p>
+    <button class="copy-button" onclick="copyContractAddress()">Copy Contract Address</button>
+</div>
 
-    <div class="section" id="about">
-        <h2>About TurboTurtle Coin</h2>
-        <p>TurboTurtle Coin is a community-driven meme coin that combines fun, humor, and the power of decentralization. Built on the Solana blockchain, it aims to bring together crypto enthusiasts and meme lovers in a unique way.</p>
-        <p><strong>TurboTurtle – The Only Coin That Can Take It Easy and Still Win!</strong></p>
-        <p>You don’t need to be fast to be smart. TurboTurtle Coin is for those who love having fun on the way to the top, even if the road is a little... slow. We’re cruising through the biggest challenges – slow, steady, and with style. Why rush when you have TurboTurtle?</p>
-        <a href="https://pump.fun" target="_blank" class="button">Buy TurboTurtle on Pump.fun</a>
-    </div>
+<!-- Images Section -->
+<div class="image-container">
+    <img class="image1" src="https://m.media-amazon.com/images/I/61T3JJxgzPL._AC_UF1000,1000_QL80_.jpg" alt="Background Image 1">
+    <img class="image2" src="https://ih1.redbubble.net/image.1534210393.6870/flat,750x,075,f-pad,750x1000,f8f8f8.jpg" alt="TurboTurtle">
+    <img class="image3" src="https://ih1.redbubble.net/image.902247496.3455/fposter,small,wall_texture,product,750x1000.jpg" alt="Background Image 3">
+</div>
 
-    <div class="section" id="roadmap">
-        <h2>Roadmap</h2>
-        <div class="roadmap">
-            <div class="roadmap-item">
-                <h3>Q1 2025</h3>
-                <p>Community Growth</p>
-            </div>
-            <div class="roadmap-item">
-                <h3>Q2 2025</h3>
-                <p>Exchange Listings</p>
-            </div>
-            <div class="roadmap-item">
-                <h3>Q3 2025</h3>
-                <p>NFT Collection Launch</p>
-            </div>
-            <div class="roadmap-item">
-                <h3>Q4 2025</h3>
-                <p>DApp Development</p>
-            </div>
+<!-- Whitepaper Section -->
+<div class="whitepaper-text">
+    <h2>TurboTurtle Coin Whitepaper</h2>
+    <p>TurboTurtle Coin is not just another cryptocurrency—it’s a movement. Our coin is built on the belief that the journey is just as important as the destination. As part of the meme coin revolution, TurboTurtle brings the fun back to cryptocurrency. Despite being slow and steady, TurboTurtle Coin is all about building a sustainable and community-driven ecosystem that thrives over time.</p>
+    <p>TurboTurtle Coin uses the Solana blockchain for fast and secure transactions. The tokenomics are designed to benefit the community while maintaining transparency and fairness for all participants. With our slow but steady approach, we aim to build something lasting.</p>
+    <p>Our roadmap includes major milestones like exchange listings, partnerships, and the development of exciting community-driven projects such as NFT collections and decentralized applications (dApps). Join the TurboTurtle movement today and experience a new kind of cryptocurrency.</p>
+</div>
+
+<!-- About Section -->
+<div class="section" id="about">
+    <h2>About TurboTurtle Coin</h2>
+    <p>TurboTurtle Coin is a community-driven meme coin that combines fun, humor, and the power of decentralization. Built on the Solana blockchain, it aims to bring together crypto enthusiasts and meme lovers in a unique way.</p>
+    <p><strong>TurboTurtle – The Only Coin That Can Take It Easy and Still Win!</strong></p>
+    <p>You don’t need to be fast to be smart. TurboTurtle Coin is for those who love having fun on the way to the top, even if the road is a little... slow. We’re cruising through the biggest challenges – slow, steady, and with style. Why rush when you have TurboTurtle?</p>
+    <a href="https://pump.fun" target="_blank" class="button">Buy TurboTurtle on Pump.fun</a>
+</div>
+
+<!-- Roadmap Section -->
+<div class="section" id="roadmap">
+    <h2>Roadmap</h2>
+    <div class="roadmap">
+        <div class="roadmap-item">
+            <h3>Q1 2025</h3>
+            <p>Community Growth</p>
         </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 TurboTurtle Coin. All rights reserved.</p>
-    </footer>
-
-    <!-- Whitepaper Section -->
-    <div class="whitepaper-text">
-        <h2>TurboTurtle Coin Whitepaper</h2>
-        <p>TurboTurtle Coin is not just another cryptocurrency—it’s a movement...</p>
-        <!-- Add full whitepaper content here -->
-    </div>
-</body>
-</html>
+        <div class="roadmap-item">
+            <h3>Q2 2025</h3>
+            <p>Exchange Listings</p>
+        </div>
+        <div class="roadmap-item">
+            <h3>
