@@ -18,13 +18,13 @@
             align-items: center;
             justify-content: space-between;
             padding: 20px;
-            background: rgba(39, 40, 42, 1); /* Oppdatert bakgrunnsfarge */
+            background: rgba(39, 40, 42, 255);
         }
         header img {
             height: 80px;
         }
         nav a {
-            color: #fff; /* Endret tekstfarge for synlighet */
+            color: white;
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
@@ -83,6 +83,36 @@
         .roadmap-item p {
             margin: 0;
         }
+        .whitepaper-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .whitepaper-content {
+            background: #222;
+            padding: 20px;
+            max-width: 800px;
+            width: 80%;
+            text-align: left;
+            border-radius: 10px;
+        }
+        .close-modal {
+            display: inline-block;
+            background: #ff4d4d;
+            padding: 10px 20px;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
         #contract {
             background: #222;
             padding: 50px 20px;
@@ -103,26 +133,10 @@
         .copy-button:hover {
             background: #0199a4;
         }
-        .whitepaper {
-            background: #222;
-            padding: 50px 20px;
-            margin-top: 50px;
-            text-align: left;
-            max-width: 900px;
-            margin: 0 auto;
-            border-radius: 10px;
-        }
-        .whitepaper h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        .whitepaper p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
-        .whitepaper h3 {
-            font-size: 1.5rem;
+        #contract-address {
             margin-top: 20px;
+            font-size: 1rem;
+            font-family: monospace;
         }
     </style>
 </head>
@@ -132,14 +146,23 @@
         <nav>
             <a href="#about">About</a>
             <a href="#roadmap">Roadmap</a>
+            <a href="#whitepaper" onclick="openWhitepaper()">Whitepaper</a>
             <a href="#contract">Contract</a>
-            <a href="#whitepaper">Whitepaper</a> <!-- Whitepaper er nå en lenke som går til seksjonen nederst -->
         </nav>
     </header>
+
+    <div class="section" id="contract">
+        <h2>TurboTurtle Coin Contract</h2>
+        <p>The official TurboTurtle Coin contract address is listed below. Feel free to copy it!</p>
+        <p id="contract-address">0xYourContractAddressHere1234567890</p>
+        <button class="copy-button" onclick="copyContractAddress()">Copy Contract Address</button>
+    </div>
 
     <div class="section" id="about">
         <h2>About TurboTurtle Coin</h2>
         <p>TurboTurtle Coin is a community-driven meme coin that combines fun, humor, and the power of decentralization. Built on the Solana blockchain, it aims to bring together crypto enthusiasts and meme lovers in a unique way.</p>
+        <p><strong>TurboTurtle – The Only Coin That Can Take It Easy and Still Win!</strong></p>
+        <p>You don’t need to be fast to be smart. TurboTurtle Coin is for those who love having fun on the way to the top, even if the road is a little... slow. We’re cruising through the biggest challenges – slow, steady, and with style. Why rush when you have TurboTurtle?</p>
         <a href="https://pump.fun" target="_blank" class="button">Buy TurboTurtle on Pump.fun</a>
     </div>
 
@@ -165,48 +188,33 @@
         </div>
     </div>
 
-    <div class="section" id="contract">
-        <h2>TurboTurtle Coin Contract</h2>
-        <p>The official TurboTurtle Coin contract address will be available here upon launch. Stay tuned!</p>
-        <!-- Uncomment and replace YOUR_CONTRACT_ADDRESS_HERE when available -->
-        <!--
-        <p id="contract-address">YOUR_CONTRACT_ADDRESS_HERE</p>
-        <button class="copy-button" onclick="copyToClipboard()">Copy Contract Address</button>
-        -->
-    </div>
-
-    <div class="whitepaper" id="whitepaper">
-        <h2>TurboTurtle Whitepaper</h2>
-        <p>
-            Welcome to the TurboTurtle Whitepaper. This document outlines the vision, objectives, and technical specifications behind TurboTurtle Coin, a decentralized, community-driven cryptocurrency built on the Solana blockchain. TurboTurtle aims to leverage the power of memes, humor, and decentralization to create a fun, interactive, and rewarding ecosystem for crypto enthusiasts and meme lovers alike.
-        </p>
-        <h3>Mission</h3>
-        <p>
-            The mission of TurboTurtle Coin is to foster a fun and supportive community while providing value through the use of blockchain technology. With the goal of bringing more people into the world of cryptocurrency, TurboTurtle Coin offers an entry point for those who are new to crypto, all while ensuring that its ecosystem remains engaging and transparent.
-        </p>
-        <h3>Tokenomics</h3>
-        <p>
-            TurboTurtle Coin is built with a fixed supply, ensuring scarcity and value retention. The total supply will be distributed across several key areas, including community incentives, exchange listings, liquidity pools, and charitable donations. The goal is to create a balanced token economy that benefits all participants in the TurboTurtle ecosystem.
-        </p>
-        <h3>Technology</h3>
-        <p>
-            TurboTurtle Coin is built on the Solana blockchain, which provides high-speed transactions and low fees, ensuring that users have a seamless experience when trading or interacting with the ecosystem. This choice of blockchain aligns with TurboTurtle's commitment to scalability and efficiency.
-        </p>
-        <h3>Future Developments</h3>
-        <p>
-            As TurboTurtle grows, the project will explore opportunities for further integration with decentralized finance (DeFi) applications, non-fungible tokens (NFTs), and decentralized applications (DApps). Our roadmap is designed to ensure long-term sustainability and growth, bringing value to our community and the broader crypto space.
-        </p>
-    </div>
-
     <footer>
         <p>&copy; 2025 TurboTurtle Coin. All rights reserved.</p>
     </footer>
 
+    <div class="whitepaper-modal" id="whitepaper-modal">
+        <div class="whitepaper-content">
+            <h2>TurboTurtle Whitepaper</h2>
+            <p>Welcome to the TurboTurtle Whitepaper! Here you will find everything you need to know about TurboTurtle Coin, its use case, the community, the ecosystem, and much more!</p>
+            <button class="close-modal" onclick="closeWhitepaper()">Close</button>
+        </div>
+    </div>
+
     <script>
-        function copyToClipboard() {
-            var contractAddress = document.getElementById('contract-address');
-            navigator.clipboard.writeText(contractAddress.innerText).then(function() {
-                alert('Contract address copied to clipboard');
+        function openWhitepaper() {
+            document.getElementById("whitepaper-modal").style.display = "flex";
+        }
+
+        function closeWhitepaper() {
+            document.getElementById("whitepaper-modal").style.display = "none";
+        }
+
+        function copyContractAddress() {
+            const contractAddress = document.getElementById("contract-address").textContent;
+            navigator.clipboard.writeText(contractAddress).then(function() {
+                alert("Contract address copied to clipboard!");
+            }).catch(function(error) {
+                alert("Failed to copy contract address: " + error);
             });
         }
     </script>
