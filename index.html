@@ -6,199 +6,168 @@
     <title>TurboTurtle Coin</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
             margin: 0;
             padding: 0;
             background: linear-gradient(135deg, #1c1c3c, #00bcd4);
             color: white;
             text-align: center;
         }
-
         header {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
             padding: 20px;
-            background: rgba(39, 40, 42, 255);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-            flex-wrap: wrap;
+            background: #111;
         }
-
-        header h1 {
-            font-size: 3rem;
-            color: white;
-            transform: rotate(-15deg);
-            margin-left: 20px;
-        }
-
         header img {
             height: 80px;
+            margin-bottom: 20px;
         }
-
-        nav {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            width: 100%;
-            margin-top: 10px;
-        }
-
         nav a {
-            color: white;
+            display: block;
+            color: #00bcd4;
             text-decoration: none;
+            margin: 10px 0;
             font-weight: bold;
-            padding: 10px 20px;
-            border-radius: 30px;
-            background: rgba(0, 188, 212, 0.8);
-            transition: background 0.3s, transform 0.3s;
         }
-
         nav a:hover {
-            background: #0199a4;
-            transform: scale(1.1);
+            text-decoration: underline;
         }
-
         .section {
             padding: 50px 20px;
         }
-
         .section h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
         }
-
-        .nft-section {
-            padding: 50px 20px;
-            background: #111;
-        }
-
-        .nft-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .nft-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .nft-card {
-            background: #222;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .nft-card img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        .nft-card h3 {
-            margin: 10px 0;
-        }
-
-        .nft-card p {
-            margin: 10px 0;
-        }
-
         .button {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 15px 30px;
+            margin: 20px 0;
             background: #00bcd4;
             color: white;
+            text-transform: uppercase;
+            font-weight: bold;
             border: none;
-            border-radius: 5px;
+            border-radius: 30px;
             text-decoration: none;
             cursor: pointer;
-            transition: background 0.3s;
         }
-
         .button:hover {
             background: #0199a4;
         }
-
         footer {
             background: #111;
             padding: 20px 0;
             margin-top: 50px;
         }
-
         footer p {
             margin: 0;
             font-size: 0.9rem;
         }
+        .roadmap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .roadmap-item {
+            background-color: #222;
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+        }
+        .contract-section {
+            background-color: #333;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            color: white;
+        }
+        .contract-button {
+            background-color: #ff6347;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .contract-button:hover {
+            background-color: #e5533b;
+        }
+        .nft-section {
+            background-color: #222;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
+    <header>
+        <img src="https://m.media-amazon.com/images/I/61nXd+Z6ktL._AC_UF1000,1000_QL80_.jpg" alt="TurboTurtle Logo">
+        <nav>
+            <a href="#about">About</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#nft">NFT</a>
+            <a href="#contract">Contract</a>
+        </nav>
+    </header>
 
-<header>
-    <h1>TurboTurtle</h1>
-    <img src="https://m.media-amazon.com/images/I/61nXd+Z6ktL._AC_UF1000,1000_QL80_.jpg" alt="TurboTurtle Logo">
-    <nav>
-        <a href="#about">About</a>
-        <a href="#roadmap">Roadmap</a>
-        <a href="#contract">Contract</a>
-        <a href="#nft">NFTs</a> <!-- Lenke til NFT-seksjonen -->
-    </nav>
-</header>
-
-<!-- About Section -->
-<div class="section" id="about">
-    <h2>About TurboTurtle Coin</h2>
-    <p>TurboTurtle Coin is a community-driven meme coin that combines fun, humor, and the power of decentralization. Built on the Solana blockchain, it aims to bring together crypto enthusiasts and meme lovers in a unique way.</p>
-    <a href="https://pump.fun" target="_blank" class="button">Buy TurboTurtle on Pump.fun</a>
-</div>
-
-<!-- Roadmap Section -->
-<div class="section" id="roadmap">
-    <h2>Roadmap</h2>
-    <p>Our journey to success!</p>
-</div>
-
-<!-- Coin contract Section -->
-<div class="section" id="contract">
-    <h2>TurboTurtle Coin Contract</h2>
-    <p>The official TurboTurtle Coin contract address is:</p>
-    <p><code>0xYourContractAddressHere1234567890</code></p>
-    <button class="button" onclick="copyContractAddress()">Copy Contract Address</button>
-</div>
-
-<!-- NFT Section -->
-<div class="nft-section" id="nft">
-    <h2>Our NFT Collection</h2>
-    <p>Discover unique NFTs from the TurboTurtle collection!</p>
-    <div class="nft-grid">
-        <div class="nft-card">
-            <img src="https://via.placeholder.com/300" alt="NFT Example">
-            <h3>TurboTurtle #1</h3>
-            <p>Price: 0.5 SOL</p>
-            <a href="#" class="button">Buy Now</a>
-        </div>
-        <div class="nft-card">
-            <img src="https://via.placeholder.com/300" alt="NFT Example">
-            <h3>TurboTurtle #2</h3>
-            <p>Price: 0.7 SOL</p>
-            <a href="#" class="button">Buy Now</a>
-        </div>
-        <!-- Flere NFTs kan legges til her -->
+    <div class="section" id="about">
+        <h2>About TurboTurtle Coin</h2>
+        <p>TurboTurtle Coin is a community-driven meme coin that combines fun, humor, and the power of decentralization. Built on the Solana blockchain, it aims to bring together crypto enthusiasts and meme lovers in a unique way.</p>
+        <a href="https://pump.fun/coin/5oo31JDsrFYgWcyfPR6mDwdt4kDdDtXR4cN9Yt2Hpump" target="_blank" class="button">Buy TurboTurtle on Pump.fun</a>
     </div>
-</div>
 
-<footer>
-    <p>&copy; 2025 TurboTurtle Coin. All rights reserved.</p>
-</footer>
+    <div class="section" id="roadmap">
+        <h2>Roadmap</h2>
+        <div class="roadmap">
+            <div class="roadmap-item">
+                <h3>Q1 2025</h3>
+                <p>Community Growth</p>
+            </div>
+            <div class="roadmap-item">
+                <h3>Q2 2025</h3>
+                <p>Exchange Listings</p>
+            </div>
+            <div class="roadmap-item">
+                <h3>Q3 2025</h3>
+                <p>NFT Collection Launch</p>
+            </div>
+            <div class="roadmap-item">
+                <h3>Q4 2025</h3>
+                <p>DApp Development</p>
+            </div>
+        </div>
+    </div>
 
-<script>
-    function copyContractAddress() {
-        const contractAddress = "0xYourContractAddressHere1234567890";
-        navigator.clipboard.writeText(contractAddress).then(() => {
-            alert("Contract address copied!");
-        });
-    }
-</script>
+    <div class="section nft-section" id="nft">
+        <h2>TurboTurtle NFTs</h2>
+        <p>Discover our exclusive NFT collection. Each NFT is uniquely designed and offers exciting benefits within the TurboTurtle ecosystem.</p>
+        <a href="https://pump.fun/nft/turboturtle" target="_blank" class="button">Explore TurboTurtle NFTs</a>
+    </div>
 
+    <div class="contract-section" id="contract">
+        <h3>TurboTurtle Coin Contract</h3>
+        <p>Copy the TurboTurtle Coin contract address below to interact with it on the Solana network:</p>
+        <input type="text" value="5oo31JDsrFYgWcyfPR6mDwdt4kDdDtXR4cN9Yt2Hpump" id="contractAddress" readonly>
+        <button class="contract-button" onclick="copyContract()">Copy Contract</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 TurboTurtle Coin. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function copyContract() {
+            const contractAddress = document.getElementById('contractAddress');
+            contractAddress.select();
+            document.execCommand("copy");
+            alert("Contract address copied: " + contractAddress.value);
+        }
+    </script>
 </body>
 </html>
