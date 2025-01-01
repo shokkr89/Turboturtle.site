@@ -14,29 +14,29 @@
             text-align: center;
         }
         header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            display: block;
             padding: 20px;
             background: #111;
         }
         header img {
             height: 80px;
+            display: block;
+            margin: 0 auto;
+        }
+        nav {
+            display: block;
+            margin-top: 20px;
         }
         nav a {
             color: #00bcd4;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 15px;
             font-weight: bold;
+            font-size: 1.2rem;
+            display: inline-block;
         }
         nav a:hover {
             text-decoration: underline;
-        }
-        .header-quote {
-            font-size: 0.8rem;
-            color: #ff6347;
-            margin-top: 10px;
-            font-style: italic;
         }
         .section {
             padding: 50px 20px;
@@ -69,12 +69,6 @@
         footer p {
             margin: 0;
             font-size: 0.9rem;
-        }
-        .footer-quote {
-            font-size: 0.8rem;
-            color: #ff6347;
-            margin-top: 10px;
-            font-style: italic;
         }
         .roadmap {
             display: flex;
@@ -152,19 +146,16 @@
             <a href="#about">About</a>
             <a href="#roadmap">Roadmap</a>
             <a href="#whitepaper" onclick="openWhitepaper()">Whitepaper</a>
+            <a href="#nft">NFT</a>
         </nav>
     </header>
-    
-    <!-- Header Quote -->
-    <div class="header-quote">
-        "TurboTurtles don't run... they glide."
-    </div>
 
     <div class="section" id="about">
         <h2>About TurboTurtle Coin</h2>
         <p>TurboTurtle Coin: Because who needs seriousness when you have turbocharged turtles? 🐢💨</p>
         <p>Built on Solana. Powered by humor. Inspired by adrenaline-fueled turtles.</p>
         <p>We’re here for one thing: making crypto fun again! (And maybe sending turtles to space.)</p>
+        <p>"When in doubt, turbocharge your turtle!"</p>
         <a href="https://pump.fun" target="_blank" class="button">Buy TurboTurtle on Pump.fun</a>
     </div>
 
@@ -174,20 +165,31 @@
             <div class="roadmap-item">
                 <h3>Q1 2025</h3>
                 <p>Community Growth – Because every turtle needs a squad!</p>
+                <p>"Join the turtle-powered revolution!"</p>
             </div>
             <div class="roadmap-item">
                 <h3>Q2 2025</h3>
                 <p>Exchange Listings – Time to go viral… like a turbo turtle on wheels!</p>
+                <p>"Turtles on wheels? Now that's speed!"</p>
             </div>
             <div class="roadmap-item">
                 <h3>Q3 2025</h3>
                 <p>NFT Collection Launch – Digital turtles are the future, obviously.</p>
+                <p>"NFTs: Turbocharge your collection!"</p>
             </div>
             <div class="roadmap-item">
                 <h3>Q4 2025</h3>
                 <p>DApp Development – Yes, a turtle app! What else did you expect?</p>
+                <p>"We’re not slow with this one!"</p>
             </div>
         </div>
+    </div>
+
+    <div class="section" id="nft">
+        <h2>TurboTurtle NFTs</h2>
+        <p>Get your hands on exclusive TurboTurtle NFTs! Our digital turtles are fast, fierce, and full of flair. What are you waiting for? Get ready to mint your very own turbo-powered turtle!</p>
+        <p>"NFTs are like turtles: You never know what’s inside until you mint!"</p>
+        <a href="https://pump.fun" target="_blank" class="button">Mint TurboTurtle NFTs</a>
     </div>
 
     <div class="contract-section">
@@ -197,10 +199,8 @@
         <button class="contract-button" onclick="copyContract()">Copy Contract</button>
     </div>
 
-    <!-- Footer Quote -->
     <footer>
         <p>&copy; 2025 TurboTurtle Coin. All rights reserved. Remember: TurboTurtle Coin might be the only crypto project that actually makes you laugh.</p>
-        <p class="footer-quote">"Skilpaddene er litt treige, men dette går raskt!"</p>
         <p>Powered by turtles and laughter. But we’re still fast, promise! 🐢💨</p>
     </footer>
 
