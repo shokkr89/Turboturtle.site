@@ -18,7 +18,7 @@
             align-items: center;
             justify-content: space-between;
             padding: 20px;
-            background: #00bcd4;
+            background: rgba(39, 40, 42, 1); /* Oppdatert bakgrunnsfarge */
         }
         header img {
             height: 80px;
@@ -191,4 +191,37 @@
     <div class="whitepaper-modal" id="whitepaper-modal">
         <div class="whitepaper-content">
             <h2>TurboTurtle Whitepaper</h2>
-            <p>Welcome to the TurboTurtle Whitepaper! Here you will find everything you need to know about TurboTurtle Coin, its use case, the community, the ecosystem, and 
+            <p>
+                Welcome to the TurboTurtle Whitepaper. This document outlines the vision, objectives, and technical specifications behind TurboTurtle Coin, a decentralized, community-driven cryptocurrency built on the Solana blockchain. TurboTurtle aims to leverage the power of memes, humor, and decentralization to create a fun, interactive, and rewarding ecosystem for crypto enthusiasts and meme lovers alike.
+            </p>
+            <h3>Mission</h3>
+            <p>
+                The mission of TurboTurtle Coin is to foster a fun and supportive community while providing value through the use of blockchain technology. With the goal of bringing more people into the world of cryptocurrency, TurboTurtle Coin offers an entry point for those who are new to crypto, all while ensuring that its ecosystem remains engaging and transparent.
+            </p>
+            <h3>Tokenomics</h3>
+            <p>
+                TurboTurtle Coin is built with a fixed supply, ensuring scarcity and value retention. The total supply will be distributed across several key areas, including community incentives, exchange listings, liquidity pools, and charitable donations. The goal is to create a balanced token economy that benefits all participants in the TurboTurtle ecosystem.
+            </p>
+            <h3>Technology</h3>
+            <p>
+                TurboTurtle Coin is built on the Solana blockchain, which provides high-speed transactions and low fees, ensuring that users have a seamless experience when trading or interacting with the ecosystem. This choice of blockchain aligns with TurboTurtle's commitment to scalability and efficiency.
+            </p>
+            <h3>Future Developments</h3>
+            <p>
+                As TurboTurtle grows, the project will explore opportunities for further integration with decentralized finance (DeFi) applications, non-fungible tokens (NFTs), and decentralized applications (DApps). Our roadmap is designed to ensure long-term sustainability and growth, bringing value to our community and the broader crypto space.
+            </p>
+            <button class="close-modal" onclick="closeWhitepaper()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function openWhitepaper() {
+            document.getElementById('whitepaper-modal').style.display = 'flex';
+        }
+
+        function closeWhitepaper() {
+            document.getElementById('whitepaper-modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
