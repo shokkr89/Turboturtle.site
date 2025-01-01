@@ -12,12 +12,7 @@
             background: linear-gradient(135deg, #1c1c3c, #00bcd4);
             color: white;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
         }
-
         header {
             display: flex;
             align-items: center;
@@ -26,15 +21,10 @@
             background: rgba(39, 40, 42, 255);
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
             flex-wrap: wrap;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
         }
-
         header img {
             height: 80px;
         }
-
         nav {
             display: flex;
             gap: 20px;
@@ -42,7 +32,6 @@
             width: 100%;
             margin-top: 10px;
         }
-
         nav a {
             color: white;
             text-decoration: none;
@@ -52,28 +41,20 @@
             background: rgba(0, 188, 212, 0.8);
             transition: background 0.3s, transform 0.3s;
         }
-
         nav a:hover {
             background: #0199a4;
             transform: scale(1.1);
         }
-
         nav a.active {
             background: #0199a4;
         }
-
         .section {
             padding: 50px 20px;
-            width: 100%;
-            max-width: 1200px;
-            margin: 20px auto;
         }
-
         .section h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
         }
-
         .button {
             display: inline-block;
             padding: 15px 30px;
@@ -88,32 +69,25 @@
             cursor: pointer;
             transition: background 0.3s, transform 0.3s;
         }
-
         .button:hover {
             background: #0199a4;
             transform: scale(1.05);
         }
-
         footer {
             background: #111;
             padding: 20px 0;
             margin-top: 50px;
-            width: 100%;
-            text-align: center;
         }
-
         footer p {
             margin: 0;
             font-size: 0.9rem;
         }
-
         .roadmap {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
         }
-
         .roadmap-item {
             background-color: #222;
             border-radius: 10px;
@@ -121,15 +95,12 @@
             width: 250px;
             text-align: center;
         }
-
         .roadmap-item h3 {
             margin-bottom: 10px;
         }
-
         .roadmap-item p {
             margin: 0;
         }
-
         #contract {
             background: #222;
             padding: 50px 20px;
@@ -137,7 +108,6 @@
             margin: 20px auto;
             max-width: 800px;
         }
-
         .copy-button {
             background: #00bcd4;
             color: white;
@@ -149,18 +119,15 @@
             font-weight: bold;
             transition: background 0.3s, transform 0.3s;
         }
-
         .copy-button:hover {
             background: #0199a4;
             transform: scale(1.05);
         }
-
         #contract-address {
             margin-top: 20px;
             font-size: 1rem;
             font-family: monospace;
         }
-
         .whitepaper-text {
             background: #222;
             color: white;
@@ -179,44 +146,60 @@
                 flex-direction: column;
                 text-align: center;
             }
-
             header img {
                 margin-bottom: 20px;
             }
-
             nav {
                 flex-direction: column;
                 width: 100%;
                 gap: 10px;
             }
-
             nav a {
                 padding: 12px 25px;
                 font-size: 1rem;
             }
-
             .section {
                 padding: 30px 15px;
             }
-
             .roadmap {
                 flex-direction: column;
                 gap: 15px;
             }
-
             .roadmap-item {
                 width: 90%;
             }
-
             .whitepaper-text {
                 width: 90%;
                 padding: 30px;
             }
         }
+
+        /* Styling for images and their borders */
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .image-container img {
+            width: 300px;
+            height: auto;
+            border-radius: 15px;
+            margin: 10px;
+        }
+        .image1 {
+            border: 10px solid rgba(10, 10, 10, 255);
+        }
+        .image2 {
+            border: 10px solid black;
+        }
+        .image3 {
+            border: 10px solid black;
+        }
+
     </style>
 </head>
 <body>
-
     <header>
         <img src="https://m.media-amazon.com/images/I/61nXd+Z6ktL._AC_UF1000,1000_QL80_.jpg" alt="TurboTurtle Logo">
         <nav>
@@ -225,6 +208,12 @@
             <a href="#contract">Contract</a>
         </nav>
     </header>
+
+    <div class="image-container">
+        <img class="image1" src="https://m.media-amazon.com/images/I/61T3JJxgzPL._AC_UF1000,1000_QL80_.jpg" alt="Background Image 1">
+        <img class="image2" src="https://ih1.redbubble.net/image.1534210393.6870/flat,750x,075,f-pad,750x1000,f8f8f8.jpg" alt="TurboTurtle">
+        <img class="image3" src="https://ih1.redbubble.net/image.902247496.3455/fposter,small,wall_texture,product,750x1000.jpg" alt="Background Image 3">
+    </div>
 
     <div class="section" id="contract">
         <h2>TurboTurtle Coin Contract</h2>
@@ -270,30 +259,8 @@
     <!-- Whitepaper Section -->
     <div class="whitepaper-text">
         <h2>TurboTurtle Coin Whitepaper</h2>
-        <p>TurboTurtle Coin is not just another cryptocurrency—it’s a movement. A revolution in the meme coin space that blends humor, community, and decentralization, all on a fast and scalable blockchain like Solana. TurboTurtle Coin is designed to empower people by offering a fun and engaging way to participate in the crypto ecosystem, while also embracing a strong commitment to long-term value creation.</p>
-        
-        <p>Our mission is to create a coin that embodies the spirit of community and meme culture, with the aim of becoming one of the most recognizable and beloved cryptocurrencies in the world. TurboTurtle Coin combines the power of memes, the potential of blockchain technology, and the growing interest in decentralized finance to provide users with a unique investment opportunity. Whether you’re a seasoned crypto investor or someone looking for a fun way to participate in the world of digital assets, TurboTurtle Coin welcomes all enthusiasts.</p>
-        
-        <p><strong>Key Features of TurboTurtle Coin:</strong></p>
-        <ul>
-            <li><strong>Community-driven:</strong> TurboTurtle Coin is built by the community, for the community. Every decision, feature, and partnership is made with the interests of our users in mind.</li>
-            <li><strong>Meme Culture:</strong> We embrace the fun and humor of the meme world. TurboTurtle Coin has captured the imagination of millions and uses the power of memes to build a vibrant and engaged community.</li>
-            <li><strong>Fast and Scalable Blockchain:</strong> Built on the Solana blockchain, TurboTurtle Coin provides fast and low-cost transactions, ensuring an optimal experience for users and holders.</li>
-        </ul>
+        <p>TurboTurtle Coin is not just another cryptocurrency—it’s a movement...</p>
+        <!-- Add full whitepaper content here -->
     </div>
-
-    <script>
-        function copyContractAddress() {
-            const contractAddress = document.getElementById("contract-address");
-            const textArea = document.createElement("textarea");
-            textArea.value = contractAddress.innerText;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textArea);
-            alert("Contract address copied to clipboard!");
-        }
-    </script>
-
 </body>
 </html>
