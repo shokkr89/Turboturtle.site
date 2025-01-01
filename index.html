@@ -78,6 +78,65 @@
             margin: 0;
             font-size: 0.9rem;
         }
+
+        .whitepaper img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .community-chat {
+            background: #333;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        .chat-box {
+            margin: 20px 0;
+            padding: 20px;
+            background: #444;
+            border-radius: 8px;
+        }
+
+        .chat-box textarea {
+            width: 100%;
+            height: 150px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .chat-box button {
+            padding: 10px 20px;
+            background: #00bcd4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .chat-box button:hover {
+            background: #0199a4;
+        }
+
+        .purchase-log {
+            background: #222;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 8px;
+        }
+
+        .purchase-log ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .purchase-log li {
+            padding: 10px;
+            background: #444;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
     </style>
 </head>
 <body>
@@ -102,6 +161,46 @@
         <button id="connectWallet" class="button">Connect Wallet</button>
         <p id="walletAddress">No wallet connected</p>
         <button id="buyTurboTurtle" class="button" style="display:none;">Buy TurboTurtle</button>
+    </div>
+
+    <!-- Whitepaper Section -->
+    <div class="whitepaper">
+        <h2>Download Our Whitepaper</h2>
+        <img src="https://example.com/whitepaper-image.png" alt="TurboTurtle Whitepaper">
+        <p>Learn all about TurboTurtle Coin, its roadmap, and its future plans by downloading our full whitepaper.</p>
+        <a href="https://example.com/TurboTurtleWhitepaper.pdf" target="_blank" class="button">Download Whitepaper</a>
+    </div>
+
+    <!-- Recent Purchases Section -->
+    <div class="purchase-log">
+        <h2>Recent Purchases</h2>
+        <ul id="purchaseList">
+            <!-- Example dynamic content -->
+            <li>Transaction: 0x1234567890... - Amount: 500 TurboTurtle</li>
+            <li>Transaction: 0x9876543210... - Amount: 200 TurboTurtle</li>
+            <li>Transaction: 0xa1b2c3d4e5... - Amount: 150 TurboTurtle</li>
+            <li>Transaction: 0x67890abcde... - Amount: 100 TurboTurtle</li>
+            <li>Transaction: 0x54321fedcb... - Amount: 250 TurboTurtle</li>
+            <li>Transaction: 0x6789abcdef... - Amount: 100 TurboTurtle</li>
+            <li>Transaction: 0x234567890a... - Amount: 300 TurboTurtle</li>
+            <li>Transaction: 0xabcdef0123... - Amount: 400 TurboTurtle</li>
+            <li>Transaction: 0x1a2b3c4d5e... - Amount: 500 TurboTurtle</li>
+            <li>Transaction: 0x9abcdefabc... - Amount: 150 TurboTurtle</li>
+        </ul>
+    </div>
+
+    <!-- Community Chat Section -->
+    <div class="community-chat">
+        <h2>Community Discussion</h2>
+        <div class="chat-box">
+            <h3>Join the Discussion</h3>
+            <textarea id="chatInput" placeholder="Write your message..."></textarea><br>
+            <button onclick="sendMessage()">Send</button>
+        </div>
+        <div id="chatMessages">
+            <h3>Latest Messages:</h3>
+            <p>No messages yet...</p>
+        </div>
     </div>
 
     <footer>
@@ -150,6 +249,17 @@
                 alert('Transaction failed');
             }
         });
+
+        // Community Chat functionality
+        function sendMessage() {
+            const message = document.getElementById('chatInput').value;
+            if (message.trim()) {
+                const newMessage = document.createElement('p');
+                newMessage.textContent = message;
+                document.getElementById('chatMessages').appendChild(newMessage);
+                document.getElementById('chatInput').value = ''; // Clear input after sending
+            }
+        }
     </script>
 </body>
 </html>
