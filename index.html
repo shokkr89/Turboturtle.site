@@ -14,29 +14,53 @@
             text-align: center;
         }
 
+        /* Header Styling */
         header {
-            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
             width: 100%;
+            top: 0;
+            z-index: 1000;
         }
 
-        header img {
-            width: 100%;
-            height: auto;
+        /* Logo Styling */
+        .logo img {
+            height: 50px;
+            width: auto;
         }
 
-        .header-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        /* Navigation Menu Styling */
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
             color: white;
-            font-size: 2.5rem;
             font-weight: bold;
-            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
+        nav ul li a:hover {
+            background-color: #0199a4;
+        }
+
+        /* Main Content Section */
         .section {
-            padding: 50px 20px;
+            padding: 100px 20px 50px; /* Adjusted for fixed header */
         }
 
         .section h2 {
@@ -56,12 +80,14 @@
             border-radius: 30px;
             text-decoration: none;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
 
         .button:hover {
             background: #0199a4;
         }
 
+        /* Footer Styling */
         footer {
             background: #111;
             padding: 20px 0;
@@ -73,105 +99,43 @@
             font-size: 0.9rem;
         }
 
-        .nft-section {
-            padding: 50px 20px;
-            background-color: #222;
-            color: white;
-            text-align: center;
-        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
 
-        .nft-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+            }
 
-        .nft-item {
-            background-color: #333;
-            border-radius: 10px;
-            padding: 20px;
-            width: 250px;
-            text-align: center;
-        }
-
-        .nft-item img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        .nft-item h3 {
-            margin: 15px 0 10px;
-        }
-
-        .nft-item p {
-            margin: 10px 0;
-        }
-
-        .community-section, .latest-purchases {
-            padding: 30px 20px;
-            margin-top: 30px;
-        }
-
-        .community-chat, .latest-purchases {
-            background: #333;
-            border-radius: 10px;
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .purchase-item, .chat-message {
-            background: #444;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-
-        /* Whitepaper Modal */
-        .whitepaper-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
-
-        .whitepaper-content {
-            background: #222;
-            padding: 20px;
-            max-width: 800px;
-            width: 80%;
-            text-align: left;
-            border-radius: 10px;
-        }
-
-        .close-modal {
-            display: inline-block;
-            background: #ff4d4d;
-            padding: 10px 20px;
-            color: white;
-            cursor: pointer;
-            margin-top: 20px;
-            border-radius: 5px;
-            text-align: center;
+            nav ul li {
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header with Text -->
+    <!-- Header with Logo and Navigation -->
     <header>
-        <img src="https://m.media-amazon.com/images/I/61nXd+Z6ktL._AC_UF1000,1000_QL80_.jpg" alt="TurboTurtle Coin">
-        <div class="header-text">Slow and steady wins the race, but TurboTurtle wins it faster!</div>
+        <div class="logo">
+            <img src="https://m.media-amazon.com/images/I/61nXd+Z6ktL._AC_UF1000,1000_QL80_.jpg" alt="TurboTurtle Coin Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#buy">Buy</a></li>
+                <li><a href="#nft">NFTs</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#whitepaper" onclick="openWhitepaper()">Whitepaper</a></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Main Content Section -->
-    <div class="section">
+    <div class="section" id="about">
         <h2>What is TurboTurtle?</h2>
         <p>TurboTurtle is a community-driven meme coin that blends fun, humor, and the power of decentralization. It’s built on the Solana blockchain and designed to bring together crypto enthusiasts and meme lovers in a new way.</p>
         <a href="#buy" class="button">Buy TurboTurtle Now</a>
@@ -183,12 +147,7 @@
         <a href="https://pump.fun" target="_blank" class="button">Go to Pump.fun</a>
     </div>
 
-    <div class="section">
-        <a href="#whitepaper" class="button" onclick="openWhitepaper()">View Whitepaper</a>
-    </div>
-
-    <!-- NFT Section -->
-    <div class="nft-section" id="nft">
+    <div class="section" id="nft">
         <h2>TurboTurtle NFT Collection</h2>
         <p>Discover unique and collectible TurboTurtle NFTs. Join the movement and own a piece of the TurboTurtle revolution!</p>
         <div class="nft-gallery">
@@ -196,8 +155,7 @@
         </div>
     </div>
 
-    <!-- Community Chat -->
-    <div class="community-section">
+    <div class="section" id="community">
         <h2>Community Chat</h2>
         <div id="chat-section" class="community-chat">
             <div id="chat-messages"></div>
@@ -206,8 +164,7 @@
         </div>
     </div>
 
-    <!-- Latest Purchases -->
-    <div class="latest-purchases">
+    <div class="section">
         <h2>Latest 10 Purchases</h2>
         <div id="latest-purchases-list"></div>
     </div>
@@ -224,44 +181,4 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 TurboTurtle Coin. All rights reserved.</p>
-    </footer>
-
-    <script>
-        // NFT Gallery Data
-        const nfts = [
-            { id: 1, name: "TurboTurtle #1", image: "https://example.com/nft1.png", price: "1 SOL" },
-            { id: 2, name: "TurboTurtle #2", image: "https://example.com/nft2.png", price: "1.5 SOL" },
-        ];
-
-        function loadNFTs() {
-            const gallery = document.querySelector(".nft-gallery");
-            nfts.forEach(nft => {
-                const nftItem = document.createElement("div");
-                nftItem.classList.add("nft-item");
-                nftItem.innerHTML = `
-                    <img src="${nft.image}" alt="${nft.name}">
-                    <h3>${nft.name}</h3>
-                    <p>Price: ${nft.price}</p>
-                    <button class="button" onclick="buyNFT(${nft.id})">Buy Now</button>
-                `;
-                gallery.appendChild(nftItem);
-            });
-        }
-
-        function buyNFT(id) {
-            alert(`You selected to buy ${nfts.find(nft => nft.id === id).name}`);
-        }
-
-        function openWhitepaper() {
-            document.getElementById('whitepaper-modal').style.display = 'flex';
-        }
-
-        function closeWhitepaper() {
-            document.getElementById('whitepaper-modal').style.display = 'none';
-        }
-
-        loadNFTs();
-    </script>
-</body>
-</html>
+        <p>& 
