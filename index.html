@@ -6,7 +6,7 @@
     <title>TurboTurtle Coin</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background: linear-gradient(135deg, #1c1c3c, #00bcd4);
@@ -15,24 +15,28 @@
         }
         header {
             display: flex;
-            flex-direction: column;
             align-items: center;
+            justify-content: space-between;
             padding: 20px;
             background: #111;
         }
         header img {
             height: 80px;
-            margin-bottom: 20px;
         }
         nav a {
-            display: block;
             color: #00bcd4;
             text-decoration: none;
-            margin: 10px 0;
+            margin: 0 15px;
             font-weight: bold;
         }
         nav a:hover {
             text-decoration: underline;
+        }
+        .header-quote {
+            font-size: 0.8rem;
+            color: #ff6347;
+            margin-top: 10px;
+            font-style: italic;
         }
         .section {
             padding: 50px 20px;
@@ -66,6 +70,12 @@
             margin: 0;
             font-size: 0.9rem;
         }
+        .footer-quote {
+            font-size: 0.8rem;
+            color: #ff6347;
+            margin-top: 10px;
+            font-style: italic;
+        }
         .roadmap {
             display: flex;
             flex-wrap: wrap;
@@ -77,6 +87,42 @@
             border-radius: 10px;
             padding: 20px;
             width: 250px;
+            text-align: center;
+        }
+        .roadmap-item h3 {
+            margin-bottom: 10px;
+        }
+        .roadmap-item p {
+            margin: 0;
+        }
+        .whitepaper-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .whitepaper-content {
+            background: #222;
+            padding: 20px;
+            max-width: 800px;
+            width: 80%;
+            text-align: left;
+            border-radius: 10px;
+        }
+        .close-modal {
+            display: inline-block;
+            background: #ff4d4d;
+            padding: 10px 20px;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
             text-align: center;
         }
         .contract-section {
@@ -97,12 +143,6 @@
         .contract-button:hover {
             background-color: #e5533b;
         }
-        .nft-section {
-            background-color: #222;
-            padding: 20px;
-            margin: 20px auto;
-            border-radius: 10px;
-        }
     </style>
 </head>
 <body>
@@ -111,15 +151,21 @@
         <nav>
             <a href="#about">About</a>
             <a href="#roadmap">Roadmap</a>
-            <a href="#nft">NFT</a>
-            <a href="#contract">Contract</a>
+            <a href="#whitepaper" onclick="openWhitepaper()">Whitepaper</a>
         </nav>
     </header>
+    
+    <!-- Header Quote -->
+    <div class="header-quote">
+        "TurboTurtles don't run... they glide."
+    </div>
 
     <div class="section" id="about">
         <h2>About TurboTurtle Coin</h2>
-        <p>TurboTurtle Coin is a community-driven meme coin that combines fun, humor, and the power of decentralization. Built on the Solana blockchain, it aims to bring together crypto enthusiasts and meme lovers in a unique way.</p>
-        <a href="https://pump.fun/coin/5oo31JDsrFYgWcyfPR6mDwdt4kDdDtXR4cN9Yt2Hpump" target="_blank" class="button">Buy TurboTurtle on Pump.fun</a>
+        <p>TurboTurtle Coin: Because who needs seriousness when you have turbocharged turtles? 🐢💨</p>
+        <p>Built on Solana. Powered by humor. Inspired by adrenaline-fueled turtles.</p>
+        <p>We’re here for one thing: making crypto fun again! (And maybe sending turtles to space.)</p>
+        <a href="https://pump.fun" target="_blank" class="button">Buy TurboTurtle on Pump.fun</a>
     </div>
 
     <div class="section" id="roadmap">
@@ -127,44 +173,61 @@
         <div class="roadmap">
             <div class="roadmap-item">
                 <h3>Q1 2025</h3>
-                <p>Community Growth</p>
+                <p>Community Growth – Because every turtle needs a squad!</p>
             </div>
             <div class="roadmap-item">
                 <h3>Q2 2025</h3>
-                <p>Exchange Listings</p>
+                <p>Exchange Listings – Time to go viral… like a turbo turtle on wheels!</p>
             </div>
             <div class="roadmap-item">
                 <h3>Q3 2025</h3>
-                <p>NFT Collection Launch</p>
+                <p>NFT Collection Launch – Digital turtles are the future, obviously.</p>
             </div>
             <div class="roadmap-item">
                 <h3>Q4 2025</h3>
-                <p>DApp Development</p>
+                <p>DApp Development – Yes, a turtle app! What else did you expect?</p>
             </div>
         </div>
     </div>
 
-    <div class="section nft-section" id="nft">
-        <h2>TurboTurtle NFTs</h2>
-        <p>Discover our exclusive NFT collection. Each NFT is uniquely designed and offers exciting benefits within the TurboTurtle ecosystem.</p>
-        <a href="https://pump.fun/nft/turboturtle" target="_blank" class="button">Explore TurboTurtle NFTs</a>
-    </div>
-
-    <div class="contract-section" id="contract">
+    <div class="contract-section">
         <h3>TurboTurtle Coin Contract</h3>
         <p>Copy the TurboTurtle Coin contract address below to interact with it on the Solana network:</p>
-        <input type="text" value="5oo31JDsrFYgWcyfPR6mDwdt4kDdDtXR4cN9Yt2Hpump" id="contractAddress" readonly>
+        <input type="text" value="50031JDsrFYgWcyfPR6mDwdt4kDdDtXR4cN9Yt2Hpump" id="contractAddress" readonly>
         <button class="contract-button" onclick="copyContract()">Copy Contract</button>
     </div>
 
+    <!-- Footer Quote -->
     <footer>
-        <p>&copy; 2025 TurboTurtle Coin. All rights reserved.</p>
+        <p>&copy; 2025 TurboTurtle Coin. All rights reserved. Remember: TurboTurtle Coin might be the only crypto project that actually makes you laugh.</p>
+        <p class="footer-quote">"Skilpaddene er litt treige, men dette går raskt!"</p>
+        <p>Powered by turtles and laughter. But we’re still fast, promise! 🐢💨</p>
     </footer>
 
+    <div class="whitepaper-modal" id="whitepaper-modal">
+        <div class="whitepaper-content">
+            <h2>TurboTurtle Whitepaper</h2>
+            <p>Welcome to the TurboTurtle Whitepaper! Here you will find everything you need to know about TurboTurtle Coin, its use case, the community, the ecosystem, and our future goals.</p>
+            <p><strong>Tokenomics:</strong> 50% for the community, 30% for development, and 20% for marketing. The goal is to build a strong decentralized network and community of supporters.</p>
+            <p><strong>Roadmap:</strong> Q1 - Community growth, Q2 - Listing on exchanges, Q3 - NFT collection launch, Q4 - DApp development.</p>
+            <button class="close-modal" onclick="closeWhitepaper()">Close</button>
+        </div>
+    </div>
+
     <script>
+        function openWhitepaper() {
+            document.getElementById('whitepaper-modal').style.display = 'flex';
+        }
+
+        function closeWhitepaper() {
+            document.getElementById('whitepaper-modal').style.display = 'none';
+        }
+
         function copyContract() {
             const contractAddress = document.getElementById('contractAddress');
             contractAddress.select();
+            contractAddress.setSelectionRange(0, 99999); // For mobile devices
+
             document.execCommand("copy");
             alert("Contract address copied: " + contractAddress.value);
         }
