@@ -6,7 +6,7 @@
     <title>TurboTurtle Coin</title>
     <style>
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background: linear-gradient(135deg, #1c1c3c, #00bcd4);
@@ -18,13 +18,13 @@
             align-items: center;
             justify-content: space-between;
             padding: 20px;
-            background: #111;
+            background: #00bcd4;
         }
         header img {
             height: 80px;
         }
         nav a {
-            color: #00bcd4;
+            color: #111;
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
@@ -113,23 +113,25 @@
             border-radius: 5px;
             text-align: center;
         }
-        .contract-section {
-            background-color: #333;
-            padding: 20px;
-            margin-top: 20px;
+        #contract {
+            background: #222;
+            padding: 50px 20px;
             border-radius: 10px;
-            color: white;
+            margin: 20px auto;
+            max-width: 800px;
         }
-        .contract-button {
-            background-color: #ff6347;
+        .copy-button {
+            background: #00bcd4;
+            color: white;
+            border: none;
             padding: 10px 20px;
+            margin-top: 10px;
             border-radius: 5px;
-            color: white;
-            font-weight: bold;
             cursor: pointer;
+            font-weight: bold;
         }
-        .contract-button:hover {
-            background-color: #e5533b;
+        .copy-button:hover {
+            background: #0199a4;
         }
     </style>
 </head>
@@ -140,6 +142,7 @@
             <a href="#about">About</a>
             <a href="#roadmap">Roadmap</a>
             <a href="#whitepaper" onclick="openWhitepaper()">Whitepaper</a>
+            <a href="#contract">Contract</a>
         </nav>
     </header>
 
@@ -171,11 +174,11 @@
         </div>
     </div>
 
-    <div class="contract-section">
-        <h3>TurboTurtle Coin Contract</h3>
-        <p>Copy the TurboTurtle Coin contract address below to interact with it on the Solana network:</p>
-        <input type="text" value="50031JDsrFYgWcyfPR6mDwdt4kDdDtXR4cN9Yt2Hpump" id="contractAddress" readonly>
-        <button class="contract-button" onclick="copyContract()">Copy Contract</button>
+    <div class="section" id="contract">
+        <h2>TurboTurtle Coin Contract</h2>
+        <p>The official TurboTurtle Coin contract address:</p>
+        <p id="contract-address">50031JDsrFYgWcyfPR6mDwdt4kDdDtXR4cN9Yt2Hpump</p>
+        <button class="copy-button" onclick="copyToClipboard()">Copy Contract Address</button>
     </div>
 
     <footer>
@@ -185,7 +188,7 @@
     <div class="whitepaper-modal" id="whitepaper-modal">
         <div class="whitepaper-content">
             <h2>TurboTurtle Whitepaper</h2>
-            <p>Welcome to the TurboTurtle Whitepaper! Here you will find everything you need to know about TurboTurtle Coin, its use case, the community, the ecosystem, and our future goals.</p>
+            <p>Welcome to the TurboTurtle Whitepaper! Here you will find everything you need to know about TurboTurtle Coin, its use case, the community, the ecosystem, and the future plans.</p>
             <p><strong>Tokenomics:</strong> 50% for the community, 30% for development, and 20% for marketing. The goal is to build a strong decentralized network and community of supporters.</p>
             <p><strong>Roadmap:</strong> Q1 - Community growth, Q2 - Listing on exchanges, Q3 - NFT collection launch, Q4 - DApp development.</p>
             <button class="close-modal" onclick="closeWhitepaper()">Close</button>
@@ -201,13 +204,14 @@
             document.getElementById('whitepaper-modal').style.display = 'none';
         }
 
-        function copyContract() {
-            const contractAddress = document.getElementById('contractAddress');
-            contractAddress.select();
-            contractAddress.setSelectionRange(0, 99999); // For mobile devices
-
+        function copyToClipboard() {
+            const contractAddress = document.getElementById('contract-address');
+            const range = document.createRange();
+            range.selectNode(contractAddress);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
             document.execCommand("copy");
-            alert("Contract address copied: " + contractAddress.value);
+            alert("Contract address copied: " + contractAddress.innerText);
         }
     </script>
 </body>
