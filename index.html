@@ -14,37 +14,31 @@
             color: #f5f5f5;
             text-align: center;
         }
+
+        /* Header styles */
         header {
             background: rgba(39, 40, 42, 0.95);
             padding: 40px 20px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
             position: relative;
         }
+
         header img {
-            height: 100px;
-            margin-bottom: 15px;
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
         }
-        nav {
-            margin-top: 20px;
-        }
-        nav a {
-            color: #f5f5f5;
-            text-decoration: none;
-            margin: 10px 0;
-            font-weight: 600;
-            font-size: 1.1rem;
-            display: block; /* Stacked links */
-            padding: 10px;
-        }
-        nav a:hover {
-            color: #00bcd4;
-            border-bottom: 2px solid #00bcd4;
-        }
+
         .header-text {
-            font-size: 2rem; /* Adjusted to be smaller */
+            font-size: 3rem;
             color: #fff;
             font-weight: 700;
-            margin-top: 15px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
             letter-spacing: 1px;
         }
 
@@ -52,13 +46,15 @@
         .section {
             padding: 60px 20px;
         }
+
         .section h2 {
-            font-size: 2.5rem; /* Adjusted size */
+            font-size: 2.5rem;
             margin-bottom: 30px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
+
         .button {
             display: inline-block;
             padding: 15px 30px;
@@ -72,43 +68,18 @@
             transition: background 0.3s ease;
             font-size: 1.1rem;
         }
+
         .button:hover {
             background: #0199a4;
         }
 
-        /* Roadmap and footer styles */
-        .roadmap {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .roadmap-item {
-            background-color: #222;
-            border-radius: 12px;
-            padding: 30px;
-            width: 250px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        .nft-section {
-            background-color: #333;
-            padding: 40px 20px;
-            margin: 30px 0;
-            border-radius: 10px;
-        }
-        .nft-item {
-            background-color: #444;
-            padding: 25px;
-            border-radius: 10px;
-            width: 220px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        .nft-item img {
+        /* Image sections */
+        .image-section img {
             width: 100%;
+            max-width: 400px;
+            margin-top: 20px;
             border-radius: 10px;
-            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         /* Footer */
@@ -117,6 +88,7 @@
             padding: 20px 0;
             margin-top: 50px;
         }
+
         footer p {
             margin: 0;
             font-size: 0.9rem;
@@ -126,18 +98,25 @@
 </head>
 <body>
     <header>
-        <img src="https://m.media-amazon.com/images/I/61nXd+Z6ktL._AC_UF1000,1000_QL80_.jpg" alt="TurboTurtle Logo">
-        <nav>
-            <a href="#coin">Buy TurboTurtle</a>
-            <a href="#contract">Contract</a>
-            <a href="#about">About</a>
-            <a href="#nft">NFT (Coming Soon)</a>
-            <a href="#roadmap">Roadmap</a>
-            <a href="#whitepaper">Whitepaper</a>
-        </nav>
+        <img src="https://github.com/shokkr89/Turboturtle.site/raw/main/IMG_0245.jpeg" alt="TurboTurtle Image">
         <div class="header-text">TurboTurtle Coin</div>
     </header>
 
+    <!-- Image Section 1 -->
+    <div class="section image-section">
+        <h2>TurboTurtle Coin in Action</h2>
+        <img src="https://github.com/shokkr89/Turboturtle.site/raw/main/IMG_0243.jpeg" alt="Image of TurboTurtle Coin">
+        <p>TurboTurtle Coin is here to take your crypto experience to the next level!</p>
+    </div>
+
+    <!-- Image Section 2 -->
+    <div class="section image-section">
+        <h2>The Power of TurboTurtle</h2>
+        <img src="https://github.com/shokkr89/Turboturtle.site/raw/main/IMG_0239.jpeg" alt="Powerful TurboTurtle">
+        <p>Join the fun and become a part of the TurboTurtle community.</p>
+    </div>
+
+    <!-- Main Content -->
     <div class="section" id="coin">
         <h2>Get TurboTurtle Coin on Pump.fun</h2>
         <p>Why walk when you can turbo-turtle?</p>
