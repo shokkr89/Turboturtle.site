@@ -5,73 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TurboTurtle Coin</title>
     <style>
+        /* Global styles */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #1c1c3c, #00bcd4);
-            color: white;
+            background: linear-gradient(135deg, #2b2b34, #4d4d5f);
+            color: #f5f5f5;
             text-align: center;
         }
         header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            background: #111;
+            background: rgba(39, 40, 42, 0.95);
+            padding: 40px 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
         }
         header img {
-            height: 80px;
-            margin-bottom: 20px;
+            height: 100px;
+            margin-bottom: 15px;
         }
         nav {
-            display: block;
-            margin-top: 20px;
+            margin-top: 30px;
         }
         nav a {
-            color: #00bcd4;
+            color: #f5f5f5;
             text-decoration: none;
             margin: 10px 0;
-            font-weight: bold;
-            font-size: 1.2rem;
-            display: block;
-            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            padding: 10px;
         }
         nav a:hover {
-            text-decoration: underline;
+            color: #00bcd4;
+            border-bottom: 2px solid #00bcd4;
         }
+        .header-text {
+            transform: rotate(-6deg);
+            font-size: 2.8rem;
+            color: #fff;
+            font-weight: 900;
+            margin-top: 15px;
+            letter-spacing: 2px;
+        }
+        .header-text-two {
+            transform: rotate(7deg);
+            font-size: 2.8rem;
+            color: #fff;
+            font-weight: 900;
+            margin-top: -10px;
+            letter-spacing: 2px;
+        }
+
+        /* Section styles */
         .section {
-            padding: 50px 20px;
+            padding: 60px 20px;
         }
         .section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 3rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
         }
         .button {
             display: inline-block;
             padding: 15px 30px;
-            margin: 20px 0;
             background: #00bcd4;
             color: white;
             text-transform: uppercase;
             font-weight: bold;
-            border: none;
             border-radius: 30px;
             text-decoration: none;
             cursor: pointer;
+            transition: background 0.3s ease;
+            font-size: 1.1rem;
         }
         .button:hover {
             background: #0199a4;
         }
-        footer {
-            background: #111;
-            padding: 20px 0;
-            margin-top: 50px;
-        }
-        footer p {
-            margin: 0;
-            font-size: 0.9rem;
-        }
+
+        /* Roadmap and footer styles */
         .roadmap {
             display: flex;
             flex-wrap: wrap;
@@ -80,40 +94,42 @@
         }
         .roadmap-item {
             background-color: #222;
-            border-radius: 10px;
-            padding: 20px;
+            border-radius: 12px;
+            padding: 30px;
             width: 250px;
             text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         .nft-section {
-            background-color: #222;
-            padding: 20px;
-            margin: 20px auto;
+            background-color: #333;
+            padding: 40px 20px;
+            margin: 30px 0;
             border-radius: 10px;
         }
         .nft-item {
-            background-color: #333;
-            padding: 20px;
+            background-color: #444;
+            padding: 25px;
             border-radius: 10px;
-            width: 200px;
+            width: 220px;
             text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         .nft-item img {
             width: 100%;
             border-radius: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
-        .nft-item button {
-            background-color: #00bcd4;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
+
+        /* Footer */
+        footer {
+            background: #111;
+            padding: 20px 0;
+            margin-top: 50px;
         }
-        .nft-item button:hover {
-            background-color: #0199a4;
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #aaa;
         }
     </style>
 </head>
@@ -128,6 +144,8 @@
             <a href="#roadmap">Roadmap</a>
             <a href="#whitepaper">Whitepaper</a>
         </nav>
+        <div class="header-text">TurboTurtle: Slow and steady? Nah, we turbo-charged that!</div>
+        <div class="header-text-two">Crypto doesn’t need to be fast – TurboTurtle proves why it doesn’t!</div>
     </header>
 
     <div class="section" id="coin">
@@ -146,14 +164,14 @@
 
     <div class="section" id="about">
         <h2>About TurboTurtle Coin</h2>
-        <p>TurboTurtle Coin is a community-driven meme coin that combines fun, humor, and the power of decentralization. Built on the Solana blockchain, it aims to bring together crypto enthusiasts and meme lovers in a unique way.</p>
-        <p>"Because sometimes, slow and steady doesn’t win the race... unless you're a turbo turtle!"</p>
+        <p>TurboTurtle Coin is a community-driven meme coin combining fun, humor, and the power of decentralization. It's not about speed, it's about fun and community.</p>
+        <p>"Sometimes, slow and steady doesn’t win the race... but TurboTurtles are too cool to care!"</p>
     </div>
 
     <div class="section nft-section" id="nft">
         <h2>NFT Marketplace</h2>
         <p>"TurboTurtle NFTs are coming soon... Get ready to mint your own turbo-powered turtle!"</p>
-        <p>Stay tuned as we prepare to launch our exclusive NFT collection!</p>
+        <p>Stay tuned as we prepare to launch our exclusive NFT collection! Because who doesn't love a turbo-powered turtle?</p>
     </div>
 
     <div class="section" id="roadmap">
@@ -161,7 +179,7 @@
         <div class="roadmap">
             <div class="roadmap-item">
                 <h3>Q1 2025</h3>
-                <p>Community Growth – TurboTurtle army, assemble!</p>
+                <p>Community Growth – TurboTurtle army, let’s go!</p>
             </div>
             <div class="roadmap-item">
                 <h3>Q2 2025</h3>
@@ -169,24 +187,24 @@
             </div>
             <div class="roadmap-item">
                 <h3>Q3 2025</h3>
-                <p>NFT Collection Launch – The TurboTurtle NFTs you’ve been waiting for!</p>
+                <p>NFT Collection Launch – Your turbo-powered turtle awaits!</p>
             </div>
             <div class="roadmap-item">
                 <h3>Q4 2025</h3>
-                <p>DApp Development – Ready, set, turbo!</p>
+                <p>DApp Development – Turbo your crypto experience!</p>
             </div>
         </div>
     </div>
 
     <div class="section" id="whitepaper">
         <h2>Whitepaper</h2>
-        <p>"Dive deep into the world of TurboTurtles. Fast, furious, and fun." </p>
-        <a href="https://example.com" target="_blank" class="button">Read Whitepaper</a>
+        <p>"TurboTurtles are redefining crypto. Fast, furious, and fun."</p>
+        <p>Get ready for more info about how TurboTurtle is changing the game!</p>
     </div>
 
     <footer>
         <p>&copy; 2025 TurboTurtle Coin. All rights reserved.</p>
-        <p>"Powered by the fastest turtles in crypto."</p>
+        <p>"Powered by the fastest turtles in crypto!"</p>
     </footer>
 
     <script>
