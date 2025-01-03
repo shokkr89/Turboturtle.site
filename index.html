@@ -27,7 +27,7 @@
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 10px;
             font-size: 1.1rem;
             font-weight: bold;
         }
@@ -56,6 +56,29 @@
             transform: translate(-50%, -50%);
             font-size: 3rem;
             font-weight: bold;
+        }
+
+        .quick-links {
+            background: #444;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .quick-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 10px 20px;
+            background: #00bcd4;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .quick-links a:hover {
+            background: #008c9e;
         }
 
         .section {
@@ -89,116 +112,58 @@
             font-size: 0.9rem;
             color: #aaa;
         }
-
-        #messages {
-            height: 150px;
-            overflow-y: auto;
-            background: #444;
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-        input[type="text"] {
-            width: 70%;
-            padding: 10px;
-            margin: 5px 0;
-            border-radius: 5px;
-            border: none;
-        }
-
-        button {
-            padding: 10px 20px;
-            background: #00bcd4;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #008c9e;
-        }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="#coin">Get Coin</a>
-        <a href="#contract">Contract</a>
-        <a href="#about">About</a>
-        <a href="#roadmap">Roadmap</a>
-        <a href="#whitepaper">Whitepaper</a>
-        <a href="#chat">Community</a>
-    </nav>
-
     <!-- Header with image -->
     <header class="header">
         <img src="IMG_0246.jpeg" alt="TurboTurtle Image" class="header-image">
         <div class="header-text">TurboTurtle Coin</div>
     </header>
 
-    <!-- Get Coin Section -->
-    <div class="section" id="coin">
-        <h2>Get Coin</h2>
-        <p>Learn how to buy TurboTurtle Coin and join our community of investors.</p>
-        <a href="https://pump.fun/coin/5oo31JDsrFYgWcyfPR6mDwdt4kDdDtXR4cN9Yt2Hpump" target="_blank" class="button">Buy Now</a>
+    <!-- Quick Links -->
+    <div class="quick-links">
+        <a href="https://t.me/+LDSk68rlh4hkMmVk" target="_blank">Telegram Group</a>
+        <a href="https://pump.fun/coin/5oo31JDsrFYgWcyfPR6mDwdt4kDdDtXR4cN9Yt2Hpump" target="_blank">Get Coin</a>
+        <a href="#contract">Contract Code</a>
     </div>
 
-    <!-- Contract Section -->
-    <div class="section" id="contract">
-        <h2>Contract</h2>
-        <p>View the details of our smart contract and explore its features:</p>
-        <p><strong>Contract Code:</strong> 5oo31JDsrFYgWcyfPR6mDwdt4kDdDtXR4cN9Yt2Hpump</p>
-        <a href="https://pump.fun/coin/5oo31JDsrFYgWcyfPR6mDwdt4kDdDtXR4cN9Yt2Hpump" target="_blank" class="button">View Contract</a>
-    </div>
+    <!-- Navigation -->
+    <nav>
+        <a href="#about">About</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#whitepaper">Whitepaper</a>
+        <a href="#chat">Community</a>
+    </nav>
 
     <!-- About Section -->
     <div class="section" id="about">
         <h2>About TurboTurtle</h2>
-        <p>TurboTurtle Coin is a revolutionary crypto project aiming to bring innovation to blockchain technology.</p>
+        <p>TurboTurtle Coin is like no other—fast, fun, and on a mission to take over the crypto world with a smile on its face (and fins on its shell)!</p>
     </div>
 
     <!-- Roadmap Section -->
     <div class="section" id="roadmap">
         <h2>Roadmap</h2>
-        <p>See the milestones we’ve achieved and what’s next for TurboTurtle Coin.</p>
+        <p>Step by step, we're swimming upstream to success. Get ready for an epic shell ride!</p>
     </div>
 
     <!-- Whitepaper Section -->
     <div class="section" id="whitepaper">
         <h2>Whitepaper</h2>
-        <p>Read our detailed whitepaper to understand our vision and technical details.</p>
+        <p>Dive into the details and discover the secrets behind TurboTurtle Coin. It's not just a coin; it's a movement!</p>
         <a href="#" class="button">Download Whitepaper</a>
     </div>
 
     <!-- Community Chat Section -->
     <div class="section" id="chat">
         <h2>Community Chat</h2>
-        <p>Join our community on Telegram:</p>
+        <p>Join the conversation and chat with fellow TurboTurtle enthusiasts!</p>
         <a href="https://t.me/+LDSk68rlh4hkMmVk" target="_blank" class="button">Join Telegram Group</a>
-        <div id="messages"></div>
-        <input type="text" id="messageInput" placeholder="Type your message" />
-        <button onclick="sendMessage()">Send</button>
     </div>
 
     <footer>
-        <p>&copy; 2025 TurboTurtle Coin. All rights reserved.</p>
+        <p>&copy; 2025 TurboTurtle Coin. Ride the tide with us!</p>
     </footer>
-
-    <script>
-        // Chat Script
-        const socket = new WebSocket('wss://your-chat-server.com');
-
-        socket.onmessage = (event) => {
-            const messagesDiv = document.getElementById('messages');
-            messagesDiv.innerHTML += `<p>${event.data}</p>`;
-        };
-
-        function sendMessage() {
-            const input = document.getElementById('messageInput');
-            socket.send(input.value);
-            input.value = '';
-        }
-    </script>
 </body>
 </html>
