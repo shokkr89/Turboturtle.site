@@ -19,6 +19,9 @@
             text-align: center;
             padding-top: 20px;
             z-index: 1000;
+            position: fixed;
+            top: 0;
+            left: 0;
         }
 
         nav a {
@@ -39,11 +42,13 @@
 
         .content {
             padding: 20px;
+            margin-top: 100px; /* Adjusted margin to prevent overlap with nav */
         }
 
         .header {
             text-align: center;
             margin-bottom: 30px;
+            position: relative;
         }
 
         .header-image {
@@ -54,12 +59,15 @@
 
         .header-text {
             position: absolute;
-            top: 50%;
+            top: 10%; /* Moves the text higher up */
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
             font-size: 3rem;
             font-weight: bold;
             color: white;
+            background: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent background for better readability */
+            padding: 10px 20px;
+            border-radius: 10px;
         }
 
         .quick-links {
@@ -158,18 +166,6 @@
 
     <!-- Content -->
     <div class="content">
-        <!-- Fun Quotes Section -->
-        <div class="fun-quotes">
-            <h3>TurboTurtle's Words of Wisdom:</h3>
-            <p>"Why rush? When you can glide through life... on a turbocharged shell!"</p>
-            <p>"Don’t just swim with the current—surf it with TurboTurtle Coin!"</p>
-            <p>"TurboTurtle is not just a coin, it's a lifestyle. Slow and steady? Nah. We’re fast, like a turtle on rocket fuel!"</p>
-            <p>"Why chase the fast lane when you can own it? TurboTurtle Coin – faster than you think!"</p>
-            <p>"A dollar for a TurboTurtle Coin? Sounds like a shell of a deal!"</p>
-            <p>"Hop on the shell-tastic ride, and let TurboTurtle lead the way to the moon!"</p>
-            <p>"Fins up, rockets on—TurboTurtle Coin is ready to launch into greatness!"</p>
-        </div>
-
         <!-- Quick Links -->
         <div class="quick-links">
             <a href="https://t.me/+LDSk68rlh4hkMmVk" target="_blank">Telegram Group</a>
@@ -201,6 +197,18 @@
             <h2>Community Chat</h2>
             <p>Join the conversation and chat with fellow TurboTurtle enthusiasts!</p>
             <a href="https://t.me/+LDSk68rlh4hkMmVk" target="_blank" class="button">Join Telegram Group</a>
+        </div>
+
+        <!-- Fun Quotes Section (moved to bottom) -->
+        <div class="fun-quotes">
+            <h3>TurboTurtle's Words of Wisdom:</h3>
+            <p>"Why rush? When you can glide through life... on a turbocharged shell!"</p>
+            <p>"Don’t just swim with the current—surf it with TurboTurtle Coin!"</p>
+            <p>"TurboTurtle is not just a coin, it's a lifestyle. Slow and steady? Nah. We’re fast, like a turtle on rocket fuel!"</p>
+            <p>"Why chase the fast lane when you can own it? TurboTurtle Coin – faster than you think!"</p>
+            <p>"A dollar for a TurboTurtle Coin? Sounds like a shell of a deal!"</p>
+            <p>"Hop on the shell-tastic ride, and let TurboTurtle lead the way to the moon!"</p>
+            <p>"Fins up, rockets on—TurboTurtle Coin is ready to launch into greatness!"</p>
         </div>
 
         <footer>
