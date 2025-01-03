@@ -15,31 +15,26 @@
             text-align: center;
         }
 
-        /* Header styles */
-        header {
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             background: rgba(39, 40, 42, 0.95);
-            padding: 40px 20px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            position: relative;
+            display: flex;
+            justify-content: center;
+            padding: 10px 20px;
         }
 
-        header img {
-            width: 100%;
-            max-height: 500px;
-            object-fit: cover;
-            border-radius: 10px;
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            text-transform: uppercase;
         }
 
-        .header-text {
-            font-size: 3rem;
-            color: #fff;
-            font-weight: 700;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-            letter-spacing: 1px;
+        nav a:hover {
+            color: #00bcd4;
         }
 
         /* Section styles */
@@ -53,6 +48,11 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
         }
 
         .button {
@@ -73,16 +73,6 @@
             background: #0199a4;
         }
 
-        /* Image sections */
-        .image-section img {
-            width: 100%;
-            max-width: 400px;
-            margin-top: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Footer */
         footer {
             background: #111;
             padding: 20px 0;
@@ -94,77 +84,78 @@
             font-size: 0.9rem;
             color: #aaa;
         }
+
+        /* Chat and leaderboard styles */
+        #chat {
+            max-width: 800px;
+            margin: auto;
+            border: 1px solid #333;
+            border-radius: 10px;
+            background: #222;
+            padding: 10px;
+        }
+
+        #messages {
+            height: 300px;
+            overflow-y: scroll;
+            background: #333;
+            padding: 10px;
+            border-radius: 10px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        #leaderboard {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .countdown-timer {
+            font-size: 2rem;
+            color: #00bcd4;
+            margin: 20px 0;
+        }
     </style>
 </head>
 <body>
+    <nav>
+        <a href="#coin">Get Coin</a>
+        <a href="#contract">Contract</a>
+        <a href="#about">About</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#whitepaper">Whitepaper</a>
+        <a href="#chat">Community</a>
+    </nav>
+
     <header>
-        <img src="https://github.com/shokkr89/Turboturtle.site/raw/main/IMG_0245.jpeg" alt="TurboTurtle Image">
         <div class="header-text">TurboTurtle Coin</div>
     </header>
 
-    <!-- Image Section 1 -->
-    <div class="section image-section">
-        <h2>TurboTurtle Coin in Action</h2>
-        <img src="https://github.com/shokkr89/Turboturtle.site/raw/main/IMG_0243.jpeg" alt="Image of TurboTurtle Coin">
-        <p>TurboTurtle Coin is here to take your crypto experience to the next level!</p>
+    <!-- Existing sections here -->
+
+    <!-- Countdown Timer -->
+    <div class="section" id="countdown">
+        <h2>Next Big Event</h2>
+        <p>Countdown to NFT Launch:</p>
+        <div id="timer" class="countdown-timer"></div>
     </div>
 
-    <!-- Image Section 2 -->
-    <div class="section image-section">
-        <h2>The Power of TurboTurtle</h2>
-        <img src="https://github.com/shokkr89/Turboturtle.site/raw/main/IMG_0239.jpeg" alt="Powerful TurboTurtle">
-        <p>Join the fun and become a part of the TurboTurtle community.</p>
+    <!-- Chat Section -->
+    <div class="section" id="chat">
+        <h2>Community Chat</h2>
+        <div id="messages"></div>
+        <input type="text" id="messageInput" placeholder="Type your message" />
+        <button onclick="sendMessage()">Send</button>
     </div>
 
-    <!-- Main Content -->
-    <div class="section" id="coin">
-        <h2>Get TurboTurtle Coin on Pump.fun</h2>
-        <p>Why walk when you can turbo-turtle?</p>
-        <a href="https://pump.fun/coin/5oo31JDsrFYgWcyfPR6mDwdt4kDdDtXR4cN9Yt2Hpump" target="_blank" class="button">Buy TurboTurtle on Pump.fun</a>
-    </div>
-
-    <div class="section" id="contract">
-        <h2>TurboTurtle Coin Contract</h2>
-        <p>Copy the TurboTurtle Coin contract address below to interact with it on the Solana network:</p>
-        <input type="text" value="5oo31JDsrFYgWcyfPR6mDwdt4kDdDtXR4cN9Yt2Hpump" id="contractAddress" readonly>
-        <button class="button" onclick="copyContract()">Copy Contract</button>
-    </div>
-
-    <div class="section" id="about">
-        <h2>About TurboTurtle Coin</h2>
-        <p>TurboTurtle Coin is a community-driven meme coin combining fun, humor, and the power of decentralization. It's not about speed, it's about fun and community.</p>
-    </div>
-
-    <div class="section nft-section" id="nft">
-        <h2>NFT Marketplace</h2>
-        <p>TurboTurtle NFTs are coming soon! Get ready to mint your own turbo-powered turtle!</p>
-    </div>
-
-    <div class="section" id="roadmap">
-        <h2>Roadmap</h2>
-        <div class="roadmap">
-            <div class="roadmap-item">
-                <h3>Q1 2025</h3>
-                <p>Community Growth</p>
-            </div>
-            <div class="roadmap-item">
-                <h3>Q2 2025</h3>
-                <p>Exchange Listings</p>
-            </div>
-            <div class="roadmap-item">
-                <h3>Q3 2025</h3>
-                <p>NFT Collection Launch</p>
-            </div>
-            <div class="roadmap-item">
-                <h3>Q4 2025</h3>
-                <p>DApp Development</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="section" id="whitepaper">
-        <h2>Whitepaper</h2>
-        <p>TurboTurtles are redefining crypto. Fast, furious, and fun.</p>
+    <!-- Leaderboard -->
+    <div class="section" id="leaderboard">
+        <h2>Leaderboard</h2>
+        <ol>
+            <li>User1 - 100,000 Coins</li>
+            <li>User2 - 80,000 Coins</li>
+            <li>User3 - 70,000 Coins</li>
+        </ol>
     </div>
 
     <footer>
@@ -172,11 +163,39 @@
     </footer>
 
     <script>
-        function copyContract() {
-            const contractAddress = document.getElementById('contractAddress');
-            contractAddress.select();
-            document.execCommand("copy");
-            alert("Contract address copied: " + contractAddress.value);
+        // Countdown Timer Script
+        const timerElement = document.getElementById('timer');
+        const eventDate = new Date('2025-04-01T00:00:00').getTime();
+
+        setInterval(() => {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            if (distance < 0) {
+                timerElement.innerHTML = "The event has started!";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            timerElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }, 1000);
+
+        // Chat Script
+        const socket = new WebSocket('wss://your-chat-server.com');
+
+        socket.onmessage = (event) => {
+            const messagesDiv = document.getElementById('messages');
+            messagesDiv.innerHTML += `<p>${event.data}</p>`;
+        };
+
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            socket.send(input.value);
+            input.value = '';
         }
     </script>
 </body>
