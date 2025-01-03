@@ -37,6 +37,31 @@
             color: #00bcd4;
         }
 
+        /* Header styles */
+        .header {
+            position: relative;
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .header-image {
+            width: 100%;
+            height: auto;
+            max-height: 400px; /* Juster høyden hvis nødvendig */
+            object-fit: cover;
+        }
+
+        .header-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
         /* Section styles */
         .section {
             padding: 60px 20px;
@@ -127,11 +152,11 @@
         <a href="#chat">Community</a>
     </nav>
 
-    <header>
+    <!-- Header with image -->
+    <header class="header">
+        <img src="IMG_0246.jpeg" alt="TurboTurtle Image" class="header-image">
         <div class="header-text">TurboTurtle Coin</div>
     </header>
-
-    <!-- Existing sections here -->
 
     <!-- Countdown Timer -->
     <div class="section" id="countdown">
