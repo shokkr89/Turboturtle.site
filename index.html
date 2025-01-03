@@ -17,11 +17,13 @@
             background: #333;
             width: 100%;
             text-align: center;
-            padding-top: 20px;
-            z-index: 1000;
-            position: fixed;
-            top: 0;
-            left: 0;
+            margin-top: 1cm; /* Skaper litt avstand under headeren */
+            padding: 15px 0;
+            border-radius: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* To kolonner for knappene */
+            gap: 10px; /* Avstand mellom knappene */
+            justify-items: center; /* Sentere innholdet i hver kolonne */
         }
 
         nav a {
@@ -30,9 +32,10 @@
             margin: 10px 20px;
             font-size: 1.2rem;
             font-weight: bold;
-            padding: 10px;
+            padding: 10px 20px;
             background: #444;
             border-radius: 5px;
+            display: inline-block;
         }
 
         nav a:hover {
@@ -42,7 +45,7 @@
 
         .content {
             padding: 20px;
-            margin-top: 100px; /* Adjusted margin to prevent overlap with nav */
+            margin-top: 20px;
         }
 
         .header {
@@ -59,15 +62,16 @@
 
         .header-text {
             position: absolute;
-            top: 10%; /* Moves the text higher up */
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -50%);
             font-size: 3rem;
             font-weight: bold;
             color: white;
-            background: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent background for better readability */
+            background: rgba(0, 0, 0, 0.5);
             padding: 10px 20px;
             border-radius: 10px;
+            border: 3px solid #00bcd4;
         }
 
         .quick-links {
@@ -156,7 +160,7 @@
         <div class="header-text">TurboTurtle Coin</div>
     </header>
 
-    <!-- Navigation (now below header) -->
+    <!-- Navigation (under header) -->
     <nav>
         <a href="#about">About</a>
         <a href="#roadmap">Roadmap</a>
