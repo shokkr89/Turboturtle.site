@@ -15,14 +15,8 @@
 
         nav {
             background: #333;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 200px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            width: 100%;
+            text-align: center;
             padding-top: 20px;
             z-index: 1000;
         }
@@ -30,11 +24,9 @@
         nav a {
             color: white;
             text-decoration: none;
-            margin: 10px 0;
+            margin: 10px 20px;
             font-size: 1.2rem;
             font-weight: bold;
-            width: 90%;
-            text-align: center;
             padding: 10px;
             background: #444;
             border-radius: 5px;
@@ -46,7 +38,6 @@
         }
 
         .content {
-            margin-left: 220px;
             padding: 20px;
         }
 
@@ -151,7 +142,13 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Header -->
+    <header class="header">
+        <img src="IMG_0246.jpeg" alt="TurboTurtle Image" class="header-image">
+        <div class="header-text">TurboTurtle Coin</div>
+    </header>
+
+    <!-- Navigation (now below header) -->
     <nav>
         <a href="#about">About</a>
         <a href="#roadmap">Roadmap</a>
@@ -161,12 +158,6 @@
 
     <!-- Content -->
     <div class="content">
-        <!-- Header -->
-        <header class="header">
-            <img src="IMG_0246.jpeg" alt="TurboTurtle Image" class="header-image">
-            <div class="header-text">TurboTurtle Coin</div>
-        </header>
-
         <!-- Fun Quotes Section -->
         <div class="fun-quotes">
             <h3>TurboTurtle's Words of Wisdom:</h3>
